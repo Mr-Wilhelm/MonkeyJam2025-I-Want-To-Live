@@ -18,3 +18,10 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(Vector2.ZERO, moveSpeed)
 		if %Sprite.animation != "idle": %Sprite.animation = "idle"
 	move_and_slide()
+
+		
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("DebugToggleCam") && %PlayerCam.isFollowingPlayer == false:
+		%PlayerCam.SetCamToZoomIn()
+	elif event.is_action_pressed("DebugToggleCam") && %PlayerCam.isFollowingPlayer == true:
+		%PlayerCam.SetCamToZoomOut()
