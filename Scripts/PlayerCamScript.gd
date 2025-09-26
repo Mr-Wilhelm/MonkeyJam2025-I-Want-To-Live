@@ -1,8 +1,8 @@
 extends Camera2D
 
 @export var camZoomSpeed: float = 5.0
-@export var zoomInVal: Vector2 = Vector2(0.5, 0.5)
-@export var zoomOutVal: Vector2 = Vector2(1.5, 1.5)
+@export var zoomInVal: Vector2 = Vector2(1.5, 1.5)
+@export var zoomOutVal: Vector2 = Vector2(0.5, 0.5)
 
 var valToZoomTo: Vector2
 var isFollowingPlayer: bool = false

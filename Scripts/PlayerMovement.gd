@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 		if %Sprite.animation != "idle": %Sprite.animation = "idle"
 	move_and_slide()
 
-		
+#currently set to semicolon (;) for the debug option, normally this function will be called from elsewhere
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("DebugToggleCam") && %PlayerCam.isFollowingPlayer == false:
 		%PlayerCam.SetCamToZoomIn()

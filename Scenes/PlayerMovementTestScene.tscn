@@ -79,5 +79,3 @@ unique_name_in_owner = true
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
 script = ExtResource("3_fdqgq")
-zoomInVal = Vector2(1.5, 1.5)
-zoomOutVal = Vector2(0.5, 0.5)
