@@ -16,7 +16,9 @@ func _process(delta: float) -> void:
 	zoom = zoom.lerp(valToZoomTo, camZoomSpeed * delta)
 	
 	if isFollowingPlayer:
-		position = Vector2.ZERO
+		position = %Player.position
+	else:
+		position = Vector2(960, 540)
 	
 func SetCamToZoomIn() -> void:
 	valToZoomTo = zoomInVal

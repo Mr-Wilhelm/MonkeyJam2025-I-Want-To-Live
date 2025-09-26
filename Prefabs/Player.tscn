@@ -1,8 +1,7 @@
-[gd_scene load_steps=38 format=3 uid="uid://bj4fohgs16e3d"]
+[gd_scene load_steps=37 format=3 uid="uid://bj4fohgs16e3d"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_8j247"]
 [ext_resource type="Texture2D" uid="uid://cego7vhynmun7" path="res://icon.svg" id="1_tww3r"]
-[ext_resource type="Script" path="res://Scripts/PlayerCamScript.gd" id="3_cqdvr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cc8dg"]
 atlas = ExtResource("1_tww3r")
@@ -257,10 +256,3 @@ autoplay = "idle"
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ygr2h")
-
-[node name="PlayerCam" type="Camera2D" parent="."]
-unique_name_in_owner = true
-zoom = Vector2(2, 2)
-position_smoothing_enabled = true
-position_smoothing_speed = 6.0
-script = ExtResource("3_cqdvr")
