@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b6byrx6hy6ifj"]
 
 [ext_resource type="PackedScene" uid="uid://bj4fohgs16e3d" path="res://Prefabs/Player.tscn" id="1_epnhw"]
-[ext_resource type="Texture2D" uid="uid://cego7vhynmun7" path="res://icon.svg" id="2_q4i5e"]
+[ext_resource type="Texture2D" uid="uid://cego7vhynmun7" path="res://Art/Placeholder/icon.svg" id="2_q4i5e"]
 [ext_resource type="Script" path="res://Scripts/PlayerCamScript.gd" id="3_fdqgq"]
 [ext_resource type="PackedScene" uid="uid://l2juimtakpam" path="res://Prefabs/InteractableObject.tscn" id="4_f0a4x"]
 [ext_resource type="Script" path="res://Scripts/InteractionSceneLoader.gd" id="5_ci84i"]

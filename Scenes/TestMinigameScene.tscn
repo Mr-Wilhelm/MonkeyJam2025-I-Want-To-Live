@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwhxim8ewgxkj"]
 
-[ext_resource type="Texture2D" uid="uid://cego7vhynmun7" path="res://icon.svg" id="1_1st8x"]
+[ext_resource type="Texture2D" uid="uid://cego7vhynmun7" path="res://Art/Placeholder/icon.svg" id="1_1st8x"]
 
 [node name="TestMinigameScene" type="Node2D"]
 

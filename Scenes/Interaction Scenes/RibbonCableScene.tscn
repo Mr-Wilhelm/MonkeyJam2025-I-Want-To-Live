@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://384jeunaih8y"]
+
+[ext_resource type="Script" path="res://Scripts/ribbon_cable_scene_script.gd" id="1_s37l5"]
+[ext_resource type="Texture2D" uid="uid://cjoo07v1hvdp" path="res://Art/Placeholder/InteractionSceneArt/RibbonCableBG.png" id="1_txfhp"]
+[ext_resource type="Texture2D" uid="uid://bwi4wkpip1f82" path="res://Art/Placeholder/InteractionSceneArt/RibbonCableConnector.png" id="2_nkcln"]
+[ext_resource type="PackedScene" uid="uid://b0g3lgfhikd3c" path="res://Prefabs/DraggableObject.tscn" id="3_qyaok"]
+
+[node name="RibbonCableScene" type="Node2D"]
+script = ExtResource("1_s37l5")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_txfhp")
+centered = false
+
+[node name="Connector" type="Sprite2D" parent="."]
+texture = ExtResource("2_nkcln")
+centered = false
+
+[node name="RibbonCable" parent="." instance=ExtResource("3_qyaok")]
+position = Vector2(123, 540)
