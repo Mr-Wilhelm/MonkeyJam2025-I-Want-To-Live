@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6byrx6hy6ifj"]
+[gd_scene load_steps=5 format=3 uid="uid://b6byrx6hy6ifj"]
 
 [ext_resource type="PackedScene" uid="uid://bj4fohgs16e3d" path="res://Prefabs/Player.tscn" id="1_epnhw"]
 [ext_resource type="Texture2D" uid="uid://cego7vhynmun7" path="res://icon.svg" id="2_q4i5e"]
 [ext_resource type="Script" path="res://Scripts/PlayerCamScript.gd" id="3_fdqgq"]
+[ext_resource type="PackedScene" uid="uid://l2juimtakpam" path="res://Prefabs/TestInteractable.tscn" id="4_f0a4x"]
 
 [node name="PlayerMovement" type="Node2D"]
 
@@ -79,3 +80,6 @@ unique_name_in_owner = true
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
 script = ExtResource("3_fdqgq")
+
+[node name="TestInteractable" parent="." instance=ExtResource("4_f0a4x")]
+position = Vector2(408, 710)
