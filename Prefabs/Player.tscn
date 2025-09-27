@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_8j247"]
 [ext_resource type="Texture2D" uid="uid://cego7vhynmun7" path="res://Art/Placeholder/icon.svg" id="1_tww3r"]
-[ext_resource type="PackedScene" uid="uid://luakvux3ro21" path="res://Prefabs/InteractLogic.tscn" id="3_eyaou"]
+[ext_resource type="PackedScene" uid="uid://luakvux3ro21" path="res://Prefabs/InteractionMechanic/InteractLogic.tscn" id="3_eyaou"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cc8dg"]
 atlas = ExtResource("1_tww3r")

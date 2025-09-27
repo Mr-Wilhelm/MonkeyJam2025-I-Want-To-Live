@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cp0c1vesby6bx"]
 
-[ext_resource type="Script" path="res://Prefabs/BeepingObject.gd" id="1_8fsc8"]
+[ext_resource type="Script" path="res://Prefabs/BeepingMechanic/BeepingObject.gd" id="1_8fsc8"]
 [ext_resource type="Texture2D" uid="uid://cego7vhynmun7" path="res://Art/Placeholder/icon.svg" id="1_fiw2u"]
-[ext_resource type="Script" path="res://Prefabs/interactable.gd" id="3_yk30j"]
+[ext_resource type="Script" path="res://Prefabs/InteractionMechanic/interactable.gd" id="3_yk30j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_diu7k"]
 size = Vector2(171, 165)

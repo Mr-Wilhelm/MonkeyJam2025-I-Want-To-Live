@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=3 uid="uid://cbwf2blv51lkf"]
+
+[ext_resource type="Script" path="res://Scripts/InteractionSceneLoader.gd" id="1_i673i"]
+[ext_resource type="PackedScene" uid="uid://bj4fohgs16e3d" path="res://Prefabs/Player.tscn" id="2_3wied"]
+[ext_resource type="Script" path="res://Scripts/PlayerCamScript.gd" id="3_fgo2x"]
+[ext_resource type="PackedScene" uid="uid://l2juimtakpam" path="res://Prefabs/InteractionMechanic/InteractableObject.tscn" id="4_u25v3"]
+
+[sub_resource type="Animation" id="Animation_axfq3"]
+resource_name = "FadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractionSceneClip:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.001, 0.001), Vector2(0.66, 0.66)]
+}
+
+[sub_resource type="Animation" id="Animation_p76ne"]
+resource_name = "FadeOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractionSceneClip:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.66, 0.66), Vector2(0.001, 0.001)]
+}
+
+[sub_resource type="Animation" id="Animation_0fk74"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractionSceneClip:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.001, 0.001)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l73nb"]
+_data = {
+"FadeIn": SubResource("Animation_axfq3"),
+"FadeOut": SubResource("Animation_p76ne"),
+"RESET": SubResource("Animation_0fk74")
+}
+
+[node name="MainScene" type="Node2D"]
+
+[node name="InteractionScene" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("1_i673i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InteractionScene"]
+libraries = {
+"": SubResource("AnimationLibrary_l73nb")
+}
+
+[node name="InteractionSceneClip" type="SubViewportContainer" parent="InteractionScene"]
+process_mode = 3
+clip_contents = true
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.001, 0.001)
+pivot_offset = Vector2(960, 540)
+stretch = true
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="InteractionScene/InteractionSceneClip"]
+transparent_bg = true
+handle_input_locally = false
+physics_object_picking = true
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Player" parent="." instance=ExtResource("2_3wied")]
+unique_name_in_owner = true
+position = Vector2(350, 315)
+
+[node name="PlayerCam" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
+script = ExtResource("3_fgo2x")
+
+[node name="InteractPrompt-RibbonCable" parent="." instance=ExtResource("4_u25v3")]
+position = Vector2(739, 620)
+
+[node name="Environ-Gate" type="Sprite2D" parent="."]
+position = Vector2(984, 1072)
+
+[connection signal="animation_finished" from="InteractionScene/AnimationPlayer" to="InteractionScene" method="_on_animation_player_animation_finished"]

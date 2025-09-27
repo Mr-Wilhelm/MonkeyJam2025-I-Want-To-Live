@@ -8,6 +8,7 @@ func load_scene(chosen_interaction : interaction):
 	match chosen_interaction:
 		interaction.RibbonCable:
 			get_node("InteractionSceneClip/SubViewport").add_child(load("res://Scenes/Interaction Scenes/RibbonCableScene.tscn").instantiate()) # replace with each scene
+			get_parent().get_node("Environ-Gate").texture = load("res://Art/Placeholder/icon.svg")
 		interaction.ScrapSearch:
 			pass
 		interaction.Welding:

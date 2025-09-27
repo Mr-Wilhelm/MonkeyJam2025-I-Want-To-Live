@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://b6byrx6hy6ifj"]
 
-[ext_resource type="PackedScene" uid="uid://bj4fohgs16e3d" path="res://Prefabs/Player.tscn" id="1_epnhw"]
-[ext_resource type="Texture2D" uid="uid://cego7vhynmun7" path="res://Art/Placeholder/icon.svg" id="2_q4i5e"]
-[ext_resource type="Script" path="res://Scripts/PlayerCamScript.gd" id="3_fdqgq"]
-[ext_resource type="PackedScene" uid="uid://l2juimtakpam" path="res://Prefabs/InteractableObject.tscn" id="4_f0a4x"]
-[ext_resource type="Script" path="res://Scripts/InteractionSceneLoader.gd" id="5_ci84i"]
-[ext_resource type="PackedScene" uid="uid://cp0c1vesby6bx" path="res://Prefabs/BeepingObject.tscn" id="6_437so"]
-[ext_resource type="AudioStream" uid="uid://bbjreeu8lspyd" path="res://Audio/Ping.mp3" id="7_pe7rw"]
+[ext_resource type="Texture2D" uid="uid://cego7vhynmun7" path="res://Art/Placeholder/icon.svg" id="1_ljrad"]
+[ext_resource type="PackedScene" uid="uid://bj4fohgs16e3d" path="res://Prefabs/Player.tscn" id="2_tpyia"]
+[ext_resource type="Script" path="res://Scripts/PlayerCamScript.gd" id="3_7ajb6"]
+[ext_resource type="PackedScene" uid="uid://l2juimtakpam" path="res://Prefabs/InteractionMechanic/InteractableObject.tscn" id="4_kdt7s"]
+[ext_resource type="PackedScene" uid="uid://cp0c1vesby6bx" path="res://Prefabs/BeepingMechanic/BeepingObject.tscn" id="5_ooq3a"]
+[ext_resource type="AudioStream" uid="uid://bbjreeu8lspyd" path="res://Audio/Ping.mp3" id="6_yt7ws"]
+[ext_resource type="Script" path="res://Scripts/InteractionSceneLoader.gd" id="7_1kuv0"]
 
 [sub_resource type="Animation" id="Animation_axfq3"]
 resource_name = "FadeIn"
@@ -66,69 +66,69 @@ _data = {
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(747, 440)
-texture = ExtResource("2_q4i5e")
+texture = ExtResource("1_ljrad")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(872, 440)
-texture = ExtResource("2_q4i5e")
+texture = ExtResource("1_ljrad")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 position = Vector2(747, 315)
-texture = ExtResource("2_q4i5e")
+texture = ExtResource("1_ljrad")
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
 position = Vector2(872, 315)
-texture = ExtResource("2_q4i5e")
+texture = ExtResource("1_ljrad")
 
 [node name="Sprite2D5" type="Sprite2D" parent="."]
 position = Vector2(1001, 440)
-texture = ExtResource("2_q4i5e")
+texture = ExtResource("1_ljrad")
 
 [node name="Sprite2D6" type="Sprite2D" parent="."]
 position = Vector2(1126, 440)
-texture = ExtResource("2_q4i5e")
+texture = ExtResource("1_ljrad")
 
 [node name="Sprite2D7" type="Sprite2D" parent="."]
 position = Vector2(1001, 315)
-texture = ExtResource("2_q4i5e")
+texture = ExtResource("1_ljrad")
 
 [node name="Sprite2D8" type="Sprite2D" parent="."]
 position = Vector2(1126, 315)
-texture = ExtResource("2_q4i5e")
+texture = ExtResource("1_ljrad")
 
 [node name="Sprite2D9" type="Sprite2D" parent="."]
 position = Vector2(1001, 689)
-texture = ExtResource("2_q4i5e")
+texture = ExtResource("1_ljrad")
 
 [node name="Sprite2D10" type="Sprite2D" parent="."]
 position = Vector2(1126, 689)
-texture = ExtResource("2_q4i5e")
+texture = ExtResource("1_ljrad")
 
 [node name="Sprite2D11" type="Sprite2D" parent="."]
 position = Vector2(1001, 564)
-texture = ExtResource("2_q4i5e")
+texture = ExtResource("1_ljrad")
 
 [node name="Sprite2D12" type="Sprite2D" parent="."]
 position = Vector2(1126, 564)
-texture = ExtResource("2_q4i5e")
+texture = ExtResource("1_ljrad")
 
 [node name="Sprite2D13" type="Sprite2D" parent="."]
 position = Vector2(748, 689)
-texture = ExtResource("2_q4i5e")
+texture = ExtResource("1_ljrad")
 
 [node name="Sprite2D14" type="Sprite2D" parent="."]
 position = Vector2(873, 689)
-texture = ExtResource("2_q4i5e")
+texture = ExtResource("1_ljrad")
 
 [node name="Sprite2D15" type="Sprite2D" parent="."]
 position = Vector2(748, 564)
-texture = ExtResource("2_q4i5e")
+texture = ExtResource("1_ljrad")
 
 [node name="Sprite2D16" type="Sprite2D" parent="."]
 position = Vector2(873, 564)
-texture = ExtResource("2_q4i5e")
+texture = ExtResource("1_ljrad")
 
-[node name="Player" parent="." instance=ExtResource("1_epnhw")]
+[node name="Player" parent="." instance=ExtResource("2_tpyia")]
 unique_name_in_owner = true
 position = Vector2(350, 315)
 
@@ -136,20 +136,20 @@ position = Vector2(350, 315)
 unique_name_in_owner = true
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
-script = ExtResource("3_fdqgq")
+script = ExtResource("3_7ajb6")
 
-[node name="TestInteractable" parent="." instance=ExtResource("4_f0a4x")]
+[node name="TestInteractable" parent="." instance=ExtResource("4_kdt7s")]
 position = Vector2(408, 710)
 
-[node name="BeepingObject" parent="." instance=ExtResource("6_437so")]
+[node name="BeepingObject" parent="." instance=ExtResource("5_ooq3a")]
 position = Vector2(1341, 775)
-beepSFX = ExtResource("7_pe7rw")
+beepSFX = ExtResource("6_yt7ws")
 beepInterval = 2.0
 beepPitch = 1.0
 
 [node name="InteractionScene" type="CanvasLayer" parent="."]
 process_mode = 3
-script = ExtResource("5_ci84i")
+script = ExtResource("7_1kuv0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="InteractionScene"]
 libraries = {
