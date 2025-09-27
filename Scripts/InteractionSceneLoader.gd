@@ -3,10 +3,11 @@ extends CanvasLayer
 enum interaction {RibbonCable, ScrapSearch, Welding, DirtCleaning, GearInsert, VendingShake, LegTwist}
 
 
+
 func load_scene(chosen_interaction : interaction):
 	match chosen_interaction:
 		interaction.RibbonCable:
-			add_child(load("res://Prefabs/DebugTestingInteractionScene.tscn").instantiate()) # replace with each scene
+			get_node("InteractionSceneClip/SubViewport").add_child(load("res://Scenes/Interaction Scenes/RibbonCableScene.tscn").instantiate()) # replace with each scene
 		interaction.ScrapSearch:
 			pass
 		interaction.Welding:
@@ -19,3 +20,19 @@ func load_scene(chosen_interaction : interaction):
 			pass
 		interaction.LegTwist:
 			pass
+	
+	$AnimationPlayer.play("FadeIn")
+
+
+
+func unload_scene():
+	$AnimationPlayer.play("FadeOut")
+	get_tree().paused = false
+		
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "FadeIn":
+		get_tree().paused = true
+	elif anim_name == "FadeOut":
+		get_node("InteractionSceneClip/SubViewport").get_child(0).queue_free()

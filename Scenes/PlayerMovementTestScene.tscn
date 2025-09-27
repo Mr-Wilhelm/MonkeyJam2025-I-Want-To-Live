@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6byrx6hy6ifj"]
+[gd_scene load_steps=12 format=3 uid="uid://b6byrx6hy6ifj"]
 
 [ext_resource type="PackedScene" uid="uid://bj4fohgs16e3d" path="res://Prefabs/Player.tscn" id="1_epnhw"]
 [ext_resource type="Texture2D" uid="uid://cego7vhynmun7" path="res://Art/Placeholder/icon.svg" id="2_q4i5e"]
@@ -7,6 +7,60 @@
 [ext_resource type="Script" path="res://Scripts/InteractionSceneLoader.gd" id="5_ci84i"]
 [ext_resource type="PackedScene" uid="uid://cp0c1vesby6bx" path="res://Prefabs/BeepingObject.tscn" id="6_437so"]
 [ext_resource type="AudioStream" uid="uid://bbjreeu8lspyd" path="res://Audio/Ping.mp3" id="7_pe7rw"]
+
+[sub_resource type="Animation" id="Animation_axfq3"]
+resource_name = "FadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractionSceneClip:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.001, 0.001), Vector2(0.66, 0.66)]
+}
+
+[sub_resource type="Animation" id="Animation_p76ne"]
+resource_name = "FadeOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractionSceneClip:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.66, 0.66), Vector2(0.001, 0.001)]
+}
+
+[sub_resource type="Animation" id="Animation_0fk74"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractionSceneClip:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.001, 0.001)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l73nb"]
+_data = {
+"FadeIn": SubResource("Animation_axfq3"),
+"FadeOut": SubResource("Animation_p76ne"),
+"RESET": SubResource("Animation_0fk74")
+}
 
 [node name="PlayerMovement" type="Node2D"]
 
@@ -87,11 +141,36 @@ script = ExtResource("3_fdqgq")
 [node name="TestInteractable" parent="." instance=ExtResource("4_f0a4x")]
 position = Vector2(408, 710)
 
-[node name="InteractionScene" type="CanvasLayer" parent="."]
-script = ExtResource("5_ci84i")
-
 [node name="BeepingObject" parent="." instance=ExtResource("6_437so")]
 position = Vector2(1341, 775)
 beepSFX = ExtResource("7_pe7rw")
 beepInterval = 2.0
 beepPitch = 1.0
+
+[node name="InteractionScene" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("5_ci84i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InteractionScene"]
+libraries = {
+"": SubResource("AnimationLibrary_l73nb")
+}
+
+[node name="InteractionSceneClip" type="SubViewportContainer" parent="InteractionScene"]
+process_mode = 3
+clip_contents = true
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.001, 0.001)
+pivot_offset = Vector2(960, 540)
+stretch = true
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="InteractionScene/InteractionSceneClip"]
+transparent_bg = true
+handle_input_locally = false
+physics_object_picking = true
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[connection signal="animation_finished" from="InteractionScene/AnimationPlayer" to="InteractionScene" method="_on_animation_player_animation_finished"]

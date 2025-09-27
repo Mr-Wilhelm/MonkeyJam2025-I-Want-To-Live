@@ -18,14 +18,16 @@ func _input(event: InputEvent) -> void:
 		var deadzone_offset = 50
 		
 		get_parent().global_position = get_global_mouse_position() + drag_offset
-		print("A: " + str(get_parent().global_position.x))
-		print("A: " + str((lower_bounds.x)))
 		if get_parent().global_position.x < lower_bounds.x + deadzone_offset:
 			get_parent().global_position.x = lower_bounds.x + deadzone_offset
+			dragging = false
 		elif get_parent().global_position.x > upper_bounds.x - deadzone_offset:
 			get_parent().global_position.x = upper_bounds.x - deadzone_offset
+			dragging = false
 		if get_parent().global_position.y < lower_bounds.y + deadzone_offset:
 			get_parent().global_position.y = lower_bounds.y + deadzone_offset
+			dragging = false
 		elif get_parent().global_position.y > upper_bounds.y - deadzone_offset:
 			get_parent().global_position.y = upper_bounds.y - deadzone_offset
+			dragging = false
 		

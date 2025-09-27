@@ -13,7 +13,5 @@ func _ready() -> void:
 	
 func OnInteract() -> void:
 	print("Interacted with: " + name)
-	
-	get_tree().paused = true
-	
+		
 	minigameOverlay.load_scene(scene_to_load) # <-- Change to index of interaction enum you want to play (seen in InteractioScene)
