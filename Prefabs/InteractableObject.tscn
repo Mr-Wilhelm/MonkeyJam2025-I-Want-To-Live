@@ -1,22 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://l2juimtakpam"]
 
 [ext_resource type="Texture2D" uid="uid://cego7vhynmun7" path="res://icon.svg" id="1_8eiu0"]
-[ext_resource type="Script" path="res://Prefabs/TestInteractableObject.gd" id="1_bgrsw"]
+[ext_resource type="Script" path="res://Prefabs/InteractableObject.gd" id="1_bgrsw"]
 [ext_resource type="PackedScene" uid="uid://bxkh4atw3fqlm" path="res://Prefabs/Interactable.tscn" id="2_8a4oj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyas5"]
 size = Vector2(271, 238)
 
-[node name="TestInteractable" type="Node2D"]
+[node name="Interactable" type="Node2D"]
 script = ExtResource("1_bgrsw")
-
-[node name="MinigameOverlay" type="CanvasLayer" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="MinigameOverlay"]
-modulate = Color(0.902874, 0.198059, 0.584507, 0.588235)
-position = Vector2(980, 529.355)
-scale = Vector2(8.4, 8.4)
-texture = ExtResource("1_8eiu0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1

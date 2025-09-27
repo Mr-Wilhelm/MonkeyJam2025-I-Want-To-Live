@@ -4,4 +4,4 @@ extends Area2D
 @export var canInteract: bool = true
 
 var interact: Callable = func():
-	pass
+	get_parent().OnInteract()

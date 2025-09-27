@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb4w36cc3whjb"]
+
+[ext_resource type="Texture2D" uid="uid://cego7vhynmun7" path="res://icon.svg" id="1_vcsb2"]
+[ext_resource type="Script" path="res://Scripts/InteractionDebugTest.gd" id="2_yghli"]
+
+[node name="Sprite2D" type="Sprite2D"]
+process_mode = 2
+modulate = Color(0.902874, 0.198059, 0.584507, 0.588235)
+position = Vector2(980, 529.355)
+scale = Vector2(8.4, 8.4)
+texture = ExtResource("1_vcsb2")
+script = ExtResource("2_yghli")
