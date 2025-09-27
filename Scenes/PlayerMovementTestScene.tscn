@@ -94,3 +94,4 @@ script = ExtResource("5_ci84i")
 position = Vector2(1341, 775)
 beepSFX = ExtResource("7_pe7rw")
 beepInterval = 2.0
+beepPitch = 1.0

@@ -38,7 +38,6 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	var currentDistance = player.global_position.distance_to(global_position)
-	print(currentDistance)
 	
 	if currentDistance < lastDistance - distanceThreshold:
 		timeSinceLastProg = 0.0
@@ -56,13 +55,15 @@ func StartBeeping() -> void:
 func PlayBeep() -> void:
 	var distance = player.global_position.distance_to(global_position)
 	
-	var pitch = beepPitch + clamp(1.0 / max(distance, 1.0), 0.0, 2.0)
-	var interval = clamp(beepInterval * (distance / 300.0), 0.2, beepInterval)
+	var pitch = beepPitch + clamp(1.0 - (distance / 1000), -1.0, 2.0)
+	var interval = clamp(beepInterval * (distance / 3000.0), 0.2, beepInterval)
 
 	audioPlayer.pitch_scale = pitch
 	audioPlayer.play()
 	
 	beepTimer.start(interval)
+	
+	print(pitch)
 
 func BeepTimeout() -> void:
 	PlayBeep()
