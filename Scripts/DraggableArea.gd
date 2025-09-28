@@ -9,11 +9,9 @@ func input_handled():
 
 	if stored_event is InputEventMouseButton and stored_event.button_index == MOUSE_BUTTON_LEFT:
 		if stored_event.pressed:
-			print("Dragging = true")
 			dragging = true
 			drag_offset = get_parent().global_position - get_global_mouse_position()
 		else:
-			print("Dragging = false")
 			dragging = false
 	
 	if stored_event is InputEventMouseMotion and dragging:
