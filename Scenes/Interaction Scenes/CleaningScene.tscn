@@ -1,12 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbork6k2f0kxi"]
+[gd_scene load_steps=5 format=3 uid="uid://cbork6k2f0kxi"]
 
-[ext_resource type="Script" path="res://Scripts/scrap_search_scene_script.gd" id="1_s70kr"]
+[ext_resource type="Script" path="res://Scripts/DirtCleaningScript.gd" id="1_mftfo"]
 [ext_resource type="Texture2D" uid="uid://dmnhduv7v3mqm" path="res://Art/Placeholder/InteractionSceneArt/ScrapSearchInteraction/ScrapSearchBG.png" id="2_ktgtr"]
+[ext_resource type="Texture2D" uid="uid://cego7vhynmun7" path="res://Art/Placeholder/icon.svg" id="3_4ltjq"]
+[ext_resource type="Script" path="res://Scripts/DirtSpotScript.gd" id="4_ijo2w"]
 
-[node name="ScrapSearchScene" type="Node2D"]
+[node name="DirtCleaningScene" type="Node2D"]
 process_mode = 3
-script = ExtResource("1_s70kr")
+script = ExtResource("1_mftfo")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_ktgtr")
 centered = false
+
+[node name="Gear" type="Sprite2D" parent="."]
+modulate = Color(0, 0.906472, 0.917673, 1)
+position = Vector2(963, 550)
+scale = Vector2(6.16, 6.16)
+texture = ExtResource("3_4ltjq")
+
+[node name="DirtObject" type="Node2D" parent="."]
+position = Vector2(758, 309)
+script = ExtResource("4_ijo2w")
+
+[node name="DirtSprite" type="Sprite2D" parent="DirtObject"]
+modulate = Color(0.388235, 0.305882, 0.14902, 1)
+scale = Vector2(1.56, 1.56)
+texture = ExtResource("3_4ltjq")
