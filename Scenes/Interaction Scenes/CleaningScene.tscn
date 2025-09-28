@@ -27,3 +27,48 @@ script = ExtResource("4_ijo2w")
 modulate = Color(0.388235, 0.305882, 0.14902, 1)
 scale = Vector2(1.56, 1.56)
 texture = ExtResource("3_4ltjq")
+
+[node name="DirtObject2" type="Node2D" parent="."]
+position = Vector2(1128, 309)
+script = ExtResource("4_ijo2w")
+
+[node name="DirtSprite" type="Sprite2D" parent="DirtObject2"]
+modulate = Color(0.388235, 0.305882, 0.14902, 1)
+scale = Vector2(1.56, 1.56)
+texture = ExtResource("3_4ltjq")
+
+[node name="DirtObject3" type="Node2D" parent="."]
+position = Vector2(1051, 580)
+script = ExtResource("4_ijo2w")
+
+[node name="DirtSprite" type="Sprite2D" parent="DirtObject3"]
+modulate = Color(0.388235, 0.305882, 0.14902, 1)
+scale = Vector2(1.56, 1.56)
+texture = ExtResource("3_4ltjq")
+
+[node name="DirtObject4" type="Node2D" parent="."]
+position = Vector2(779, 708)
+script = ExtResource("4_ijo2w")
+
+[node name="DirtSprite" type="Sprite2D" parent="DirtObject4"]
+modulate = Color(0.388235, 0.305882, 0.14902, 1)
+scale = Vector2(1.56, 1.56)
+texture = ExtResource("3_4ltjq")
+
+[node name="DirtObject5" type="Node2D" parent="."]
+position = Vector2(886, 532)
+script = ExtResource("4_ijo2w")
+
+[node name="DirtSprite" type="Sprite2D" parent="DirtObject5"]
+modulate = Color(0.388235, 0.305882, 0.14902, 1)
+scale = Vector2(1.56, 1.56)
+texture = ExtResource("3_4ltjq")
+
+[node name="DirtObject6" type="Node2D" parent="."]
+position = Vector2(1184, 805)
+script = ExtResource("4_ijo2w")
+
+[node name="DirtSprite" type="Sprite2D" parent="DirtObject6"]
+modulate = Color(0.388235, 0.305882, 0.14902, 1)
+scale = Vector2(1.56, 1.56)
+texture = ExtResource("3_4ltjq")

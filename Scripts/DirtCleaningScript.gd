@@ -17,3 +17,7 @@ func _physics_process(delta: float) -> void:
 
 	input_flags = []
 	
+	if patchesCleaned >= 6:
+		get_parent().get_parent().unload_scene()
+		
+	

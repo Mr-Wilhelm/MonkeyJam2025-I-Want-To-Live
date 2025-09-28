@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var dirtSprite: Sprite2D = $DirtSprite
-@onready var area: Area2D = $DirtArea
 
 var isCleaning: bool = false
 var cleanRate: float = 0.01 #speed at which cleaning is done
