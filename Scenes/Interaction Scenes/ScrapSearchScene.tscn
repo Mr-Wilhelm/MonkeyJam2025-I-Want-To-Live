@@ -1,0 +1,123 @@
+[gd_scene load_steps=13 format=3 uid="uid://cysssmutgifqe"]
+
+[ext_resource type="Texture2D" uid="uid://dmnhduv7v3mqm" path="res://Art/Placeholder/InteractionSceneArt/ScrapSearchInteraction/ScrapSearchBG.png" id="1_0x6mc"]
+[ext_resource type="Script" path="res://Scripts/scrap_search_scene_script.gd" id="1_3arh2"]
+[ext_resource type="PackedScene" uid="uid://b0g3lgfhikd3c" path="res://Prefabs/InteractionMechanic/DraggableObject.tscn" id="2_a2e7t"]
+[ext_resource type="Texture2D" uid="uid://ckp2wunmloi3c" path="res://Art/Placeholder/InteractionSceneArt/ScrapSearchInteraction/ScrapSearchScarp2.png" id="3_sk7j4"]
+[ext_resource type="Script" path="res://Scripts/ScrapSearchFix.gd" id="4_3jngq"]
+[ext_resource type="Texture2D" uid="uid://bp82imv0ljrvg" path="res://Art/Placeholder/InteractionSceneArt/ScrapSearchInteraction/ScrapSearchScarp3.png" id="5_qqk0s"]
+[ext_resource type="Texture2D" uid="uid://c8a4m8qk04dqi" path="res://Art/Placeholder/InteractionSceneArt/ScrapSearchInteraction/ScrapSearchScarp4.png" id="6_lo2dt"]
+[ext_resource type="Texture2D" uid="uid://1tor20doswat" path="res://Art/Placeholder/InteractionSceneArt/ScrapSearchInteraction/ScrapSearchScarp5.png" id="7_5smfj"]
+[ext_resource type="Texture2D" uid="uid://5f3qj6dcffvl" path="res://Art/Placeholder/InteractionSceneArt/ScrapSearchInteraction/ScrapSearchArm.png" id="8_nsyu8"]
+
+[sub_resource type="Animation" id="Animation_73y38"]
+resource_name = "Flash"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_38fe8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e7lvb"]
+_data = {
+"Flash": SubResource("Animation_73y38"),
+"RESET": SubResource("Animation_38fe8")
+}
+
+[node name="ScrapSearchScene" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_3arh2")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_0x6mc")
+centered = false
+
+[node name="Scrap2" parent="." instance=ExtResource("2_a2e7t")]
+z_index = 4
+position = Vector2(949, 494)
+texture = ExtResource("3_sk7j4")
+region_enabled = true
+region_rect = Rect2(1398, -3, 527, 465)
+
+[node name="CollisionPolygon2D" parent="Scrap2/Area2D" index="0"]
+polygon = PackedVector2Array(879, 313, 955, 330, 992, 349, 1033, 373, 1056, 468, 1059, 522, 1030, 691, 1035, 697, 1063, 682, 1075, 685, 1084, 693, 1139, 700, 1193, 697, 1163, 733, 1153, 738, 1116, 733, 1070, 754, 1040, 765, 1014, 759, 963, 697, 901, 708, 848, 724, 814, 704, 797, 669, 784, 652, 765, 642, 749, 615, 748, 570, 757, 514, 772, 470, 809, 390, 842, 345)
+
+[node name="Scrap3" parent="." instance=ExtResource("2_a2e7t")]
+z_index = 3
+position = Vector2(1249, 360)
+texture = ExtResource("5_qqk0s")
+region_enabled = true
+region_rect = Rect2(801, -3, 557, 704)
+
+[node name="CollisionPolygon2D" parent="Scrap3/Area2D" index="0"]
+polygon = PackedVector2Array(696, 582, 1004, 237, 1020, 198, 1047, 191, 1074, 204, 1094, 232, 1104, 246, 1148, 231, 1181, 228, 1191, 246, 1140, 418, 1093, 506, 1045, 534, 975, 529, 946, 531, 929, 566, 931, 623, 944, 637, 961, 647, 954, 725, 933, 782, 901, 828, 850, 881, 816, 876, 808, 839, 812, 792, 817, 738, 805, 708, 764, 715, 730, 678)
+
+[node name="Scrap4" parent="." instance=ExtResource("2_a2e7t")]
+z_index = 2
+position = Vector2(604, 531)
+texture = ExtResource("6_lo2dt")
+region_enabled = true
+region_rect = Rect2(80, 425, 569, 480)
+
+[node name="CollisionPolygon2D" parent="Scrap4/Area2D" index="0"]
+polygon = PackedVector2Array(886, 577, 994, 583, 1007, 683, 1037, 747, 1095, 756, 1155, 730, 1213, 684, 1211, 632, 1193, 508, 1131, 382, 1048, 326, 982, 328, 931, 349, 888, 327, 857, 363, 846, 397, 809, 390, 714, 601, 699, 685, 721, 727, 759, 716, 800, 655)
+
+[node name="Scrap5" parent="." instance=ExtResource("2_a2e7t")]
+z_index = 1
+position = Vector2(602, 779)
+texture = ExtResource("7_5smfj")
+region_enabled = true
+region_rect = Rect2(297, -13, 574, 379)
+
+[node name="CollisionPolygon2D" parent="Scrap5/Area2D" index="0"]
+polygon = PackedVector2Array(722, 500, 797, 393, 812, 400, 865, 390, 911, 402, 929, 441, 1002, 431, 1041, 448, 1095, 446, 1113, 497, 1147, 521, 1177, 568, 1210, 571, 1216, 614, 1197, 669, 1163, 697, 1135, 706, 1084, 678, 998, 673, 928, 603, 835, 612, 816, 598, 806, 525, 780, 496, 734, 510)
+
+[node name="ReplacementArm" type="Sprite2D" parent="."]
+process_mode = 3
+texture = ExtResource("8_nsyu8")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ReplacementArm"]
+libraries = {
+"": SubResource("AnimationLibrary_e7lvb")
+}
+
+[node name="Area2D" type="Area2D" parent="ReplacementArm"]
+process_mode = 3
+process_priority = -1
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_3jngq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ReplacementArm/Area2D"]
+polygon = PackedVector2Array(1232, 358, 1243, 442, 886, 440, 818, 464, 635, 696, 666, 770, 620, 824, 543, 848, 453, 812, 406, 762, 500, 669, 574, 631, 781, 417, 802, 378, 879, 376)
+
+[connection signal="animation_finished" from="ReplacementArm/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
+[editable path="Scrap2"]
+[editable path="Scrap3"]
+[editable path="Scrap4"]
+[editable path="Scrap5"]

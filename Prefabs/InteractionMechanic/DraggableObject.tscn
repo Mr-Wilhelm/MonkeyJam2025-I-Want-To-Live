@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b0g3lgfhikd3c"]
 
-[ext_resource type="Texture2D" uid="uid://cy3amfgn8euop" path="res://Art/Placeholder/InteractionSceneArt/RibbonCable.png" id="1_chxoe"]
+[ext_resource type="Texture2D" uid="uid://cy3amfgn8euop" path="res://Art/Placeholder/InteractionSceneArt/RibbonCableInteraction/RibbonCable.png" id="1_chxoe"]
 [ext_resource type="Script" path="res://Scripts/DraggableArea.gd" id="2_5uvs3"]
 
 [node name="ObjectSprite" type="Sprite2D"]
@@ -8,6 +8,8 @@ position = Vector2(-610, 0)
 texture = ExtResource("1_chxoe")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("2_5uvs3")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]

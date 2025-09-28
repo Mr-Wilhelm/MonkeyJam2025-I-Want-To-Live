@@ -11,7 +11,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("InteractionSceneClip:scale")
+tracks/0/path = NodePath("Control:scale")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -27,7 +27,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("InteractionSceneClip:scale")
+tracks/0/path = NodePath("Control:scale")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -42,14 +42,14 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("InteractionSceneClip:scale")
+tracks/0/path = NodePath("Control:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.001, 0.001)]
+"values": [Vector2(0.66, 0.66)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l73nb"]
@@ -70,22 +70,19 @@ libraries = {
 "": SubResource("AnimationLibrary_l73nb")
 }
 
-[node name="InteractionSceneClip" type="SubViewportContainer" parent="InteractionScene"]
-process_mode = 3
+[node name="Control" type="Control" parent="InteractionScene"]
 clip_contents = true
-offset_right = 1920.0
-offset_bottom = 1080.0
-scale = Vector2(0.001, 0.001)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.66, 0.66)
 pivot_offset = Vector2(960, 540)
-stretch = true
-metadata/_edit_use_anchors_ = true
-
-[node name="SubViewport" type="SubViewport" parent="InteractionScene/InteractionSceneClip"]
-transparent_bg = true
-handle_input_locally = false
-physics_object_picking = true
-size = Vector2i(1920, 1080)
-render_target_update_mode = 4
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
 
 [node name="Player" parent="." instance=ExtResource("2_3wied")]
 unique_name_in_owner = true
@@ -99,6 +96,10 @@ script = ExtResource("3_fgo2x")
 
 [node name="InteractPrompt-RibbonCable" parent="." instance=ExtResource("4_u25v3")]
 position = Vector2(739, 620)
+
+[node name="InteractPrompt-ScrapSearch" parent="." instance=ExtResource("4_u25v3")]
+position = Vector2(1090, 623)
+scene_to_load = 1
 
 [node name="Environ-Gate" type="Sprite2D" parent="."]
 position = Vector2(984, 1072)

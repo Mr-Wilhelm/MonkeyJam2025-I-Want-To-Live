@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy3amfgn8euop"
-path="res://.godot/imported/RibbonCable.png-482e644017aa33dad1b43886e1028da5.ctex"
+uid="uid://cjoo07v1hvdp"
+path="res://.godot/imported/RibbonCableBG.png-11bf34ba6a374cf56f80c542993b2caf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Placeholder/InteractionSceneArt/RibbonCable.png"
-dest_files=["res://.godot/imported/RibbonCable.png-482e644017aa33dad1b43886e1028da5.ctex"]
+source_file="res://Art/Placeholder/InteractionSceneArt/RibbonCableInteraction/RibbonCableBG.png"
+dest_files=["res://.godot/imported/RibbonCableBG.png-11bf34ba6a374cf56f80c542993b2caf.ctex"]
 
 [params]
 

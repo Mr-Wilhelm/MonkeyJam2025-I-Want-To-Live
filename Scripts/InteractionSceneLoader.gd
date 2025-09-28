@@ -7,10 +7,10 @@ enum interaction {RibbonCable, ScrapSearch, Welding, DirtCleaning, GearInsert, V
 func load_scene(chosen_interaction : interaction):
 	match chosen_interaction:
 		interaction.RibbonCable:
-			get_node("InteractionSceneClip/SubViewport").add_child(load("res://Scenes/Interaction Scenes/RibbonCableScene.tscn").instantiate()) # replace with each scene
+			get_node("Control").add_child(load("res://Scenes/Interaction Scenes/RibbonCableScene.tscn").instantiate()) # replace with each scene
 			get_parent().get_node("Environ-Gate").texture = load("res://Art/Placeholder/icon.svg")
 		interaction.ScrapSearch:
-			pass
+			get_node("Control").add_child(load("res://Scenes/Interaction Scenes/ScrapSearchScene.tscn").instantiate())
 		interaction.Welding:
 			pass
 		interaction.DirtCleaning:
@@ -36,4 +36,4 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "FadeIn":
 		get_tree().paused = true
 	elif anim_name == "FadeOut":
-		get_node("InteractionSceneClip/SubViewport").get_child(0).queue_free()
+		get_node("Control").get_child(0).queue_free()
