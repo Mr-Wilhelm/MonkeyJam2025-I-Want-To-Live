@@ -92,8 +92,6 @@ position = Vector2(350, 315)
 
 [node name="PlayerCam" type="Camera2D" parent="."]
 unique_name_in_owner = true
-position_smoothing_enabled = true
-position_smoothing_speed = 6.0
 script = ExtResource("3_fgo2x")
 
 [node name="InteractPrompt-RibbonCable" parent="." instance=ExtResource("4_u25v3")]
