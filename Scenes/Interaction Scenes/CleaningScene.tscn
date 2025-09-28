@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbork6k2f0kxi"]
+[gd_scene load_steps=6 format=3 uid="uid://cbork6k2f0kxi"]
 
 [ext_resource type="Script" path="res://Scripts/DirtCleaningScript.gd" id="1_mftfo"]
 [ext_resource type="Texture2D" uid="uid://dmnhduv7v3mqm" path="res://Art/Placeholder/InteractionSceneArt/ScrapSearchInteraction/ScrapSearchBG.png" id="2_ktgtr"]
 [ext_resource type="Texture2D" uid="uid://cego7vhynmun7" path="res://Art/Placeholder/icon.svg" id="3_4ltjq"]
 [ext_resource type="Script" path="res://Scripts/DirtSpotScript.gd" id="4_ijo2w"]
+[ext_resource type="AudioStream" uid="uid://bi5bhl8biduea" path="res://Audio/Scrubbing.mp3" id="5_xyesx"]
 
 [node name="DirtCleaningScene" type="Node2D"]
 process_mode = 3
@@ -28,6 +29,9 @@ modulate = Color(0.388235, 0.305882, 0.14902, 1)
 scale = Vector2(1.56, 1.56)
 texture = ExtResource("3_4ltjq")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DirtObject"]
+stream = ExtResource("5_xyesx")
+
 [node name="DirtObject2" type="Node2D" parent="."]
 position = Vector2(1128, 309)
 script = ExtResource("4_ijo2w")
@@ -36,6 +40,9 @@ script = ExtResource("4_ijo2w")
 modulate = Color(0.388235, 0.305882, 0.14902, 1)
 scale = Vector2(1.56, 1.56)
 texture = ExtResource("3_4ltjq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DirtObject2"]
+stream = ExtResource("5_xyesx")
 
 [node name="DirtObject3" type="Node2D" parent="."]
 position = Vector2(1051, 580)
@@ -46,6 +53,9 @@ modulate = Color(0.388235, 0.305882, 0.14902, 1)
 scale = Vector2(1.56, 1.56)
 texture = ExtResource("3_4ltjq")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DirtObject3"]
+stream = ExtResource("5_xyesx")
+
 [node name="DirtObject4" type="Node2D" parent="."]
 position = Vector2(779, 708)
 script = ExtResource("4_ijo2w")
@@ -54,6 +64,9 @@ script = ExtResource("4_ijo2w")
 modulate = Color(0.388235, 0.305882, 0.14902, 1)
 scale = Vector2(1.56, 1.56)
 texture = ExtResource("3_4ltjq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DirtObject4"]
+stream = ExtResource("5_xyesx")
 
 [node name="DirtObject5" type="Node2D" parent="."]
 position = Vector2(886, 532)
@@ -64,6 +77,9 @@ modulate = Color(0.388235, 0.305882, 0.14902, 1)
 scale = Vector2(1.56, 1.56)
 texture = ExtResource("3_4ltjq")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DirtObject5"]
+stream = ExtResource("5_xyesx")
+
 [node name="DirtObject6" type="Node2D" parent="."]
 position = Vector2(1184, 805)
 script = ExtResource("4_ijo2w")
@@ -72,3 +88,6 @@ script = ExtResource("4_ijo2w")
 modulate = Color(0.388235, 0.305882, 0.14902, 1)
 scale = Vector2(1.56, 1.56)
 texture = ExtResource("3_4ltjq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DirtObject6"]
+stream = ExtResource("5_xyesx")

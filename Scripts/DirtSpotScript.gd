@@ -30,6 +30,8 @@ func _process(delta):
 func scrub():
 	if dirtSprite.modulate.a > 0:
 		dirtSprite.modulate.a = max(0.0, dirtSprite.modulate.a - cleanRate)
+		if !$AudioStreamPlayer2D.playing:
+			$AudioStreamPlayer2D.play()
 	else:
 		objectClean()
 		queue_free()
