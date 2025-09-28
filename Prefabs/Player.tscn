@@ -1,8 +1,13 @@
-[gd_scene load_steps=23 format=3 uid="uid://bj4fohgs16e3d"]
+[gd_scene load_steps=28 format=3 uid="uid://bj4fohgs16e3d"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_8j247"]
+[ext_resource type="AudioStream" uid="uid://bq201a8m65sai" path="res://Audio/Step1.mp3" id="2_eq5rp"]
 [ext_resource type="Texture2D" uid="uid://cpxydbobbaqoa" path="res://Art/SpriteSheets/IWTL player.png" id="2_fi7mh"]
+[ext_resource type="AudioStream" uid="uid://cuge2l2ehocm6" path="res://Audio/Step2.mp3" id="3_7qesd"]
 [ext_resource type="PackedScene" uid="uid://luakvux3ro21" path="res://Prefabs/InteractionMechanic/InteractLogic.tscn" id="3_eyaou"]
+[ext_resource type="AudioStream" uid="uid://cuit8w1vtcla1" path="res://Audio/Step3.mp3" id="4_2rq1p"]
+[ext_resource type="AudioStream" uid="uid://havgdfjrpu3k" path="res://Audio/Step4.mp3" id="5_u6tx2"]
+[ext_resource type="AudioStream" uid="uid://ct13wl68ojban" path="res://Audio/Step5.mp3" id="6_f8784"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mlfui"]
 atlas = ExtResource("2_fi7mh")
@@ -158,6 +163,7 @@ size = Vector2(32, 32)
 position = Vector2(232, 103)
 motion_mode = 1
 script = ExtResource("1_8j247")
+footstepSounds = Array[AudioStream]([ExtResource("2_eq5rp"), ExtResource("3_7qesd"), ExtResource("4_2rq1p"), ExtResource("5_u6tx2"), ExtResource("6_f8784")])
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
@@ -170,3 +176,6 @@ autoplay = "idle"
 shape = SubResource("RectangleShape2D_ygr2h")
 
 [node name="InteractingComponent" parent="." instance=ExtResource("3_eyaou")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -20.0
