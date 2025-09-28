@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbork6k2f0kxi"]
+
+[ext_resource type="Script" path="res://Scripts/scrap_search_scene_script.gd" id="1_s70kr"]
+[ext_resource type="Texture2D" uid="uid://dmnhduv7v3mqm" path="res://Art/Placeholder/InteractionSceneArt/ScrapSearchInteraction/ScrapSearchBG.png" id="2_ktgtr"]
+
+[node name="ScrapSearchScene" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_s70kr")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_ktgtr")
+centered = false

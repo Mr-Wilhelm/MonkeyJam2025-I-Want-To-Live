@@ -14,7 +14,7 @@ func load_scene(chosen_interaction : interaction):
 		interaction.Welding:
 			pass
 		interaction.DirtCleaning:
-			pass
+			get_node("Control").add_child(load("res://Scenes/Interaction Scenes/CleaningScene.tscn").instantiate())
 		interaction.GearInsert:
 			pass
 		interaction.VendingShake:
