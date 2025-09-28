@@ -89,10 +89,15 @@ mouse_filter = 1
 [node name="Player" parent="." instance=ExtResource("2_3wied")]
 unique_name_in_owner = true
 position = Vector2(350, 315)
+moveSpeed = 350.0
 
 [node name="PlayerCam" type="Camera2D" parent="."]
 unique_name_in_owner = true
+position_smoothing_enabled = true
+position_smoothing_speed = 2.75
 script = ExtResource("3_fgo2x")
+zoomInVal = Vector2(2, 2)
+zoomOutVal = Vector2(1, 1)
 
 [node name="InteractPrompt-RibbonCable" parent="." instance=ExtResource("4_u25v3")]
 position = Vector2(739, 620)
