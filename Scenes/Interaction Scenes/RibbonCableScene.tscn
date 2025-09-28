@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://384jeunaih8y"]
+[gd_scene load_steps=6 format=3 uid="uid://384jeunaih8y"]
 
 [ext_resource type="Script" path="res://Scripts/ribbon_cable_scene_script.gd" id="1_s37l5"]
 [ext_resource type="Texture2D" uid="uid://cjoo07v1hvdp" path="res://Art/Placeholder/InteractionSceneArt/RibbonCableInteraction/RibbonCableBG.png" id="1_txfhp"]
 [ext_resource type="Texture2D" uid="uid://bwi4wkpip1f82" path="res://Art/Placeholder/InteractionSceneArt/RibbonCableInteraction/RibbonCableConnector.png" id="2_nkcln"]
 [ext_resource type="PackedScene" uid="uid://b0g3lgfhikd3c" path="res://Prefabs/InteractionMechanic/DraggableObject.tscn" id="3_qyaok"]
+[ext_resource type="AudioStream" uid="uid://dc5o4ik742lo7" path="res://Audio/ChargeUp.mp3" id="5_pqbjk"]
 
 [node name="RibbonCableScene" type="Node2D"]
 process_mode = 3
@@ -20,3 +21,6 @@ offset = Vector2(-84.565, 89.005)
 
 [node name="RibbonCable" parent="." instance=ExtResource("3_qyaok")]
 position = Vector2(117, 539)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_pqbjk")

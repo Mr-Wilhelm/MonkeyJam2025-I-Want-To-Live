@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0g3lgfhikd3c"]
+[gd_scene load_steps=5 format=3 uid="uid://b0g3lgfhikd3c"]
 
 [ext_resource type="Texture2D" uid="uid://cy3amfgn8euop" path="res://Art/Placeholder/InteractionSceneArt/RibbonCableInteraction/RibbonCable.png" id="1_chxoe"]
 [ext_resource type="Script" path="res://Scripts/DraggableArea.gd" id="2_5uvs3"]
+[ext_resource type="AudioStream" uid="uid://bvhlnfc0bn387" path="res://Audio/nondescriptPickup.mp3" id="3_yuutr"]
+[ext_resource type="AudioStream" uid="uid://dg6f0y3xhk8lm" path="res://Audio/ScrapDrop.mp3" id="4_u4nuy"]
 
 [node name="ObjectSprite" type="Sprite2D"]
 position = Vector2(-610, 0)
@@ -11,7 +13,10 @@ texture = ExtResource("1_chxoe")
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_5uvs3")
+soundEffects = Array[AudioStream]([ExtResource("3_yuutr"), ExtResource("4_u4nuy")])
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(-960, -540)
 polygon = PackedVector2Array(979, 362, 984, 374, 974, 554, 915, 564, 911, 551, 914, 538, 897, 541, 866, 546, 832, 545, 759, 546, 687, 536, 594, 524, 494, 511, 425, 511, 340, 528, 283, 547, 192, 591, 100, 616, 24, 627, -2, 624, -2, 450, 21, 450, 83, 443, 141, 426, 194, 397, 288, 344, 365, 322, 463, 325, 555, 345, 634, 369, 727, 392, 851, 391, 887, 390, 930, 378, 930, 365)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D"]

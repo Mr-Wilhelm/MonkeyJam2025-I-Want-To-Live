@@ -5,14 +5,21 @@ var drag_offset : Vector2 = Vector2.ZERO
 
 var stored_event : InputEvent
 
+@export var soundEffects: Array[AudioStream]
+@onready var audioPlayer: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 func input_handled():
 
 	if stored_event is InputEventMouseButton and stored_event.button_index == MOUSE_BUTTON_LEFT:
 		if stored_event.pressed:
+			audioPlayer.stream = soundEffects[0]
+			audioPlayer.play()
 			dragging = true
 			drag_offset = get_parent().global_position - get_global_mouse_position()
 		else:
 			dragging = false
+			audioPlayer.stream = soundEffects[1]
+			audioPlayer.play()
 	
 	if stored_event is InputEventMouseMotion and dragging:
 		var scaled_viewport_size = get_viewport_rect().size*get_parent().get_parent().get_parent().scale.x
