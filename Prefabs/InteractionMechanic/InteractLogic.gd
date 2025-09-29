@@ -33,13 +33,9 @@ func _on_interact_range_area_entered(area: Area2D) -> void:
 	print("Entered", area)
 	if area.name == "Interactable":		
 		currentInteractions.push_back(area)
-	else:
-		pass
 
 
 func _on_interact_range_area_exited(area: Area2D) -> void:
 	print("Exited", area)
 	if area.name == "Interactable":		
 		currentInteractions.erase(area)
-	else:
-		pass

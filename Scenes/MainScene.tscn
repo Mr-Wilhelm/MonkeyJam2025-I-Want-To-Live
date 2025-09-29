@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://cbwf2blv51lkf"]
+[gd_scene load_steps=46 format=4 uid="uid://cbwf2blv51lkf"]
 
 [ext_resource type="Script" path="res://Scripts/InteractionSceneLoader.gd" id="1_i673i"]
 [ext_resource type="PackedScene" uid="uid://bj4fohgs16e3d" path="res://Prefabs/Player.tscn" id="2_3wied"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://dadqscfqawdca" path="res://Art/FinalArt/Environment/IWTL poopin time.png" id="8_3hhme"]
 [ext_resource type="Texture2D" uid="uid://bhub8t27rog4" path="res://Art/FinalArt/Environment/IWTL Tires.png" id="9_wcvam"]
 [ext_resource type="Texture2D" uid="uid://c1xjflk06xtkq" path="res://Art/SpriteSheets/IWTL K8.png" id="10_wmapw"]
+[ext_resource type="PackedScene" uid="uid://euolmm4su44r" path="res://Scenes/AudioTrigger.tscn" id="18_bqhyq"]
+[ext_resource type="AudioStream" uid="uid://bpgkb8w25g6pb" path="res://Audio/SceneDialogue/Scene1.mp3" id="19_lk2kf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xko1o"]
 texture = ExtResource("7_sc5dk")
@@ -3091,5 +3093,9 @@ position = Vector2(1863, 236)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_icrqq")
 frame = 1
+
+[node name="AudioTrigger" parent="." instance=ExtResource("18_bqhyq")]
+position = Vector2(781, -346)
+dialogueToPlay = ExtResource("19_lk2kf")
 
 [connection signal="animation_finished" from="InteractionScene/AnimationPlayer" to="InteractionScene" method="_on_animation_player_animation_finished"]
