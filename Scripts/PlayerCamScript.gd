@@ -8,9 +8,9 @@ var valToZoomTo: Vector2
 var isFollowingPlayer: bool = false
 
 func _ready() -> void:
-	zoom = zoomOutVal
+	zoom = zoomInVal
 	valToZoomTo = zoom
-	isFollowingPlayer = false
+	isFollowingPlayer = true
 	
 func _process(delta: float) -> void:
 	zoom = zoom.lerp(valToZoomTo, camZoomSpeed * delta)
