@@ -52,6 +52,8 @@ func PlayFootstepSound():
 #currently set to semicolon (;) for the debug option, normally this function will be called from elsewhere
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("DebugToggleCam") && %PlayerCam.isFollowingPlayer == false:
-		%PlayerCam.SetCamToZoomIn()
+		#%PlayerCam.SetCamToZoomIn()
+		pass
 	elif event.is_action_pressed("DebugToggleCam") && %PlayerCam.isFollowingPlayer == true:
-		%PlayerCam.SetCamToZoomOut()
+		#%PlayerCam.SetCamToZoomOut()
+		pass
