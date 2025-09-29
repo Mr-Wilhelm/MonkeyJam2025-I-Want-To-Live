@@ -14,4 +14,5 @@ func _ready() -> void:
 func OnInteract() -> void:
 	print("Interacted with: " + name)	
 	minigameOverlay.load_scene(scene_to_load)
+	
 	queue_free() 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://cojxw8e5jpc77"]
 
-[ext_resource type="Script" path="res://Scripts/scrap_search_scene_script.gd" id="1_gyw57"]
+[ext_resource type="Script" path="res://Scenes/Interaction Scenes/leg_scrap_search_scene.gd" id="1_dwcnx"]
 [ext_resource type="Texture2D" uid="uid://cc85jsbermpdo" path="res://Art/FinalArt/InteractionScenes/ScrapSearch/IWTL interactive background.png" id="2_h13gl"]
 [ext_resource type="Texture2D" uid="uid://cgmwvfofwtowq" path="res://Art/FinalArt/InteractionScenes/LegAttach/IWTL interactive k8 leg.png" id="3_wj3to"]
 [ext_resource type="Script" path="res://Scripts/ScrapSearchFix.gd" id="4_l006x"]
@@ -50,7 +50,7 @@ _data = {
 
 [node name="ScrapSearchScene" type="Node2D"]
 process_mode = 3
-script = ExtResource("1_gyw57")
+script = ExtResource("1_dwcnx")
 
 [node name="Background" type="Sprite2D" parent="."]
 scale = Vector2(13.17, 13.17)

@@ -2,7 +2,7 @@ extends Node2D
 
 @export var scene_to_load : int
 
-@onready var player: Node2D = %Player
+var player: Node2D 
 
 @export var beepSFX: AudioStream
 @export var beepInterval: float
@@ -15,13 +15,11 @@ var lastDistance: float = INF
 var distanceThreshold: float = 5.0	#distance required to move to consider "progress" towards beeping object
 var timeSinceLastProg: float = 0.0
 
-@onready var interactable: Area2D = $Interactable
 @onready var objectSprite: Sprite2D = $Sprite2D
 var minigameOverlay: CanvasLayer
 
 func _ready() -> void:
-	interactable.interact = Callable(self, "OnInteract")
-	minigameOverlay = get_parent().get_node("InteractionScene")
+	player = get_parent().get_node("Player")
 	
 	#Audio Player Setup
 	audioPlayer = AudioStreamPlayer2D.new()
@@ -38,6 +36,9 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	var currentDistance = player.global_position.distance_to(global_position)
+	
+	if currentDistance< 100:
+		queue_free()
 	
 	if currentDistance < lastDistance - distanceThreshold:
 		timeSinceLastProg = 0.0
@@ -63,13 +64,12 @@ func PlayBeep() -> void:
 	
 	beepTimer.start(interval)
 	
-	print(pitch)
+	
 
 func BeepTimeout() -> void:
 	PlayBeep()
 
 func OnInteract() -> void:
-	print("Interacted with: " + name)
 	beepTimer.stop()
 	audioPlayer.stop()
 	

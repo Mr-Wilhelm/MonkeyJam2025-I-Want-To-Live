@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://cbwf2blv51lkf"]
+[gd_scene load_steps=47 format=4 uid="uid://cbwf2blv51lkf"]
 
 [ext_resource type="Script" path="res://Scripts/InteractionSceneLoader.gd" id="1_i673i"]
 [ext_resource type="PackedScene" uid="uid://bj4fohgs16e3d" path="res://Prefabs/Player.tscn" id="2_3wied"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://b4gs2skgcbe2n" path="res://Art/FinalArt/Environment/Sprite_1basicfloor_new (1).png" id="5_l6wkh"]
 [ext_resource type="PackedScene" uid="uid://cp0c1vesby6bx" path="res://Prefabs/BeepingMechanic/BeepingObject.tscn" id="5_whh3n"]
 [ext_resource type="Texture2D" uid="uid://bymx1h3mhmi2s" path="res://Art/FinalArt/Environment/cliffsssss.png" id="6_7djy3"]
-[ext_resource type="AudioStream" uid="uid://bbjreeu8lspyd" path="res://Audio/Ping.mp3" id="6_ty5eq"]
 [ext_resource type="Texture2D" uid="uid://cepj2lupykdx8" path="res://Art/FinalArt/Environment/Sprite_1basicfloor.png" id="7_sc5dk"]
 [ext_resource type="Texture2D" uid="uid://dadqscfqawdca" path="res://Art/FinalArt/Environment/IWTL poopin time.png" id="8_3hhme"]
 [ext_resource type="Texture2D" uid="uid://bhub8t27rog4" path="res://Art/FinalArt/Environment/IWTL Tires.png" id="9_wcvam"]
@@ -3047,8 +3046,11 @@ unique_name_in_owner = true
 position = Vector2(782, -107)
 moveSpeed = 200.0
 
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Player"]
+
 [node name="PlayerCam" type="Camera2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(836, -854)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.75
 script = ExtResource("3_fgo2x")
@@ -3056,54 +3058,72 @@ zoomInVal = Vector2(2, 2)
 zoomOutVal = Vector2(1, 1)
 
 [node name="InteractPrompt-RibbonCable" parent="." instance=ExtResource("4_u25v3")]
-position = Vector2(2516, 851)
+z_index = 1
+position = Vector2(832, -989)
+scale = Vector2(0.725, 0.725)
+
+[node name="Sprite2D" parent="InteractPrompt-RibbonCable" index="0"]
+visible = false
 
 [node name="InteractPrompt-ScrapSearch" parent="." instance=ExtResource("4_u25v3")]
-position = Vector2(2867, 854)
+visible = false
+z_index = 1
+position = Vector2(1727, -1542)
 scene_to_load = 1
 
 [node name="Sprite2D" parent="InteractPrompt-ScrapSearch" index="0"]
 texture = ExtResource("15_yopu3")
 
 [node name="InteractPrompt-Cleaning" parent="." instance=ExtResource("4_u25v3")]
-position = Vector2(2867, 531)
+visible = false
+z_index = 1
+position = Vector2(1538, -372)
 scene_to_load = 3
 
 [node name="Sprite2D" parent="InteractPrompt-Cleaning" index="0"]
 texture = ExtResource("15_yopu3")
 
 [node name="InteractPrompt-ArmAttach" parent="." instance=ExtResource("4_u25v3")]
-position = Vector2(2867, 236)
+z_index = 1
+position = Vector2(3209, -809)
 scene_to_load = 2
 
+[node name="Sprite2D" parent="InteractPrompt-ArmAttach" index="0"]
+visible = false
+texture = null
+
 [node name="InteractPrompt-LegAttach" parent="." instance=ExtResource("4_u25v3")]
-position = Vector2(2504, 236)
+z_index = 1
+position = Vector2(3164, -1104)
 scene_to_load = 6
 
+[node name="Sprite2D" parent="InteractPrompt-LegAttach" index="0"]
+visible = false
+
 [node name="InteractPrompt-LegSearch" parent="." instance=ExtResource("4_u25v3")]
-position = Vector2(2168, 236)
+visible = false
+z_index = 1
+position = Vector2(-161, -1499)
 scene_to_load = 5
 
 [node name="Sprite2D" parent="InteractPrompt-LegSearch" index="0"]
 texture = ExtResource("15_yopu3")
 
 [node name="InteractPrompt-GearInsert" parent="." instance=ExtResource("4_u25v3")]
-position = Vector2(2168, 852)
+z_index = 1
+position = Vector2(3118, -1429)
 scene_to_load = 4
+
+[node name="Sprite2D" parent="InteractPrompt-GearInsert" index="0"]
+visible = false
 
 [node name="Environ-Gate" type="Sprite2D" parent="."]
 position = Vector2(984, 1072)
 
-[node name="BeepingObject" parent="." instance=ExtResource("5_whh3n")]
-position = Vector2(2437, 554)
-beepSFX = ExtResource("6_ty5eq")
-beepInterval = 2.0
-
 [node name="k8" type="AnimatedSprite2D" parent="."]
-position = Vector2(1863, 236)
+position = Vector2(836, -1033)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_icrqq")
-frame = 1
 
 [node name="AudioTrigger" parent="." instance=ExtResource("18_bqhyq")]
 position = Vector2(781, -190)
@@ -3116,10 +3136,15 @@ offset_right = 2319.0
 offset_bottom = -99.0
 scale = Vector2(0.5, 0.5)
 
+[node name="BeepingObject" parent="." instance=ExtResource("5_whh3n")]
+position = Vector2(836, -1009)
+
 [connection signal="animation_finished" from="InteractionScene/AnimationPlayer" to="InteractionScene" method="_on_animation_player_animation_finished"]
 
+[editable path="InteractPrompt-RibbonCable"]
 [editable path="InteractPrompt-ScrapSearch"]
 [editable path="InteractPrompt-Cleaning"]
 [editable path="InteractPrompt-ArmAttach"]
 [editable path="InteractPrompt-LegAttach"]
 [editable path="InteractPrompt-LegSearch"]
+[editable path="InteractPrompt-GearInsert"]

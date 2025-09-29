@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cillddnyx24i4"
-path="res://.godot/imported/Sprite_quit_pressed.png-209f981b311cbfc43f7e5d9901471038.ctex"
+uid="uid://cynmd707s34tk"
+path="res://.godot/imported/Sprite_quit.png-e40db4a3d0c4e87248d737fd2b26e000.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/FinalArt/Sprite_quit_pressed.png"
-dest_files=["res://.godot/imported/Sprite_quit_pressed.png-209f981b311cbfc43f7e5d9901471038.ctex"]
+source_file="res://Art/Sprite_quit.png"
+dest_files=["res://.godot/imported/Sprite_quit.png-e40db4a3d0c4e87248d737fd2b26e000.ctex"]
 
 [params]
 

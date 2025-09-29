@@ -1,24 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cp0c1vesby6bx"]
+[gd_scene load_steps=4 format=3 uid="uid://cp0c1vesby6bx"]
 
 [ext_resource type="Script" path="res://Prefabs/BeepingMechanic/BeepingObject.gd" id="1_8fsc8"]
 [ext_resource type="Texture2D" uid="uid://cego7vhynmun7" path="res://Art/Placeholder/icon.svg" id="1_fiw2u"]
-[ext_resource type="Script" path="res://Prefabs/InteractionMechanic/interactable.gd" id="3_yk30j"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_diu7k"]
-size = Vector2(171, 165)
+[ext_resource type="AudioStream" uid="uid://bbjreeu8lspyd" path="res://Audio/Ping.mp3" id="2_4e513"]
 
 [node name="BeepingObject" type="Node2D"]
 script = ExtResource("1_8fsc8")
+beepSFX = ExtResource("2_4e513")
 beepPitch = 2.0
 hintTimer = 15.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.123693, 0.646103, 0, 1)
 texture = ExtResource("1_fiw2u")
-
-[node name="Interactable" type="Area2D" parent="."]
-script = ExtResource("3_yk30j")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-position = Vector2(0.5, 2.5)
-shape = SubResource("RectangleShape2D_diu7k")

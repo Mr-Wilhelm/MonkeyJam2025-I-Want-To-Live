@@ -24,7 +24,8 @@ func _physics_process(delta: float) -> void:
 		if $TargetConnectionPoint.global_position.distance_to(($Arm.global_position)) < (range * get_parent().scale.x):
 			$AudioStreamPlayer2D.play()
 			complete = true
+			get_parent().get_parent().unload_scene(2)
 
 	else:
 		$Arm.global_position = $TargetConnectionPoint.global_position 
-		get_parent().get_parent().unload_scene()
+		
