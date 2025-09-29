@@ -14,7 +14,6 @@ script = ExtResource("1_bgrsw")
 z_index = -1
 position = Vector2(1, 1)
 texture = ExtResource("1_8eiu0")
-flip_v = true
 
 [node name="Interactable" parent="." instance=ExtResource("2_8a4oj")]
 interactName = "Test"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://cbwf2blv51lkf"]
+[gd_scene load_steps=48 format=4 uid="uid://cbwf2blv51lkf"]
 
 [ext_resource type="Script" path="res://Scripts/InteractionSceneLoader.gd" id="1_i673i"]
 [ext_resource type="PackedScene" uid="uid://bj4fohgs16e3d" path="res://Prefabs/Player.tscn" id="2_3wied"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dadqscfqawdca" path="res://Art/FinalArt/Environment/IWTL poopin time.png" id="8_3hhme"]
 [ext_resource type="Texture2D" uid="uid://bhub8t27rog4" path="res://Art/FinalArt/Environment/IWTL Tires.png" id="9_wcvam"]
 [ext_resource type="Texture2D" uid="uid://c1xjflk06xtkq" path="res://Art/SpriteSheets/IWTL K8.png" id="10_wmapw"]
+[ext_resource type="Texture2D" uid="uid://wmr7i4ksojy" path="res://Art/FinalArt/Environment/sprite_poop.png" id="15_yopu3"]
 [ext_resource type="PackedScene" uid="uid://euolmm4su44r" path="res://Scenes/AudioTrigger.tscn" id="18_bqhyq"]
 [ext_resource type="AudioStream" uid="uid://bpgkb8w25g6pb" path="res://Audio/SceneDialogue/Scene1.mp3" id="19_lk2kf"]
 [ext_resource type="PackedScene" uid="uid://cikhs4rfthbf3" path="res://Scenes/MainMenu.tscn" id="20_uqt0d"]
@@ -3061,9 +3062,15 @@ position = Vector2(2516, 851)
 position = Vector2(2867, 854)
 scene_to_load = 1
 
+[node name="Sprite2D" parent="InteractPrompt-ScrapSearch" index="0"]
+texture = ExtResource("15_yopu3")
+
 [node name="InteractPrompt-Cleaning" parent="." instance=ExtResource("4_u25v3")]
 position = Vector2(2867, 531)
 scene_to_load = 3
+
+[node name="Sprite2D" parent="InteractPrompt-Cleaning" index="0"]
+texture = ExtResource("15_yopu3")
 
 [node name="InteractPrompt-ArmAttach" parent="." instance=ExtResource("4_u25v3")]
 position = Vector2(2867, 236)
@@ -3076,6 +3083,9 @@ scene_to_load = 6
 [node name="InteractPrompt-LegSearch" parent="." instance=ExtResource("4_u25v3")]
 position = Vector2(2168, 236)
 scene_to_load = 5
+
+[node name="Sprite2D" parent="InteractPrompt-LegSearch" index="0"]
+texture = ExtResource("15_yopu3")
 
 [node name="InteractPrompt-GearInsert" parent="." instance=ExtResource("4_u25v3")]
 position = Vector2(2168, 852)
@@ -3107,3 +3117,9 @@ offset_bottom = -99.0
 scale = Vector2(0.5, 0.5)
 
 [connection signal="animation_finished" from="InteractionScene/AnimationPlayer" to="InteractionScene" method="_on_animation_player_animation_finished"]
+
+[editable path="InteractPrompt-ScrapSearch"]
+[editable path="InteractPrompt-Cleaning"]
+[editable path="InteractPrompt-ArmAttach"]
+[editable path="InteractPrompt-LegAttach"]
+[editable path="InteractPrompt-LegSearch"]
