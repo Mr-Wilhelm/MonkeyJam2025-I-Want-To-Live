@@ -5,6 +5,8 @@ var drag_offset : Vector2 = Vector2.ZERO
 
 var stored_event : InputEvent
 
+@export var deadzone_offset = 130
+
 @export var soundEffects: Array[AudioStream]
 @onready var audioPlayer: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
@@ -28,7 +30,6 @@ func input_handled():
 		var lower_bounds = get_viewport_rect().get_center() - scaled_viewport_size/2
 		var upper_bounds = get_viewport_rect().get_center() +scaled_viewport_size/2
 		#var deadzone_offset = 50 * get_parent().get_parent().get_parent().scale.x
-		var deadzone_offset = 130
 		
 		
 		get_parent().global_position = get_global_mouse_position() + drag_offset
