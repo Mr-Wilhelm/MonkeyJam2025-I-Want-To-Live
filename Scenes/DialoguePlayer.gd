@@ -6,6 +6,7 @@ extends Node2D
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	$AudioStreamPlayer2D.stream = dialogueToPlay
-	$AudioStreamPlayer2D.play()# Replace with function body.
-	print("Playing Audio")
+	if body.name == "Player":
+		$AudioStreamPlayer2D.stream = dialogueToPlay
+		$AudioStreamPlayer2D.play()# Replace with function body.
+		print("Playing Audio")

@@ -3043,7 +3043,7 @@ mouse_filter = 1
 
 [node name="Player" parent="." instance=ExtResource("2_3wied")]
 unique_name_in_owner = true
-position = Vector2(786, -167)
+position = Vector2(782, -107)
 moveSpeed = 200.0
 
 [node name="PlayerCam" type="Camera2D" parent="."]
@@ -3096,7 +3096,7 @@ sprite_frames = SubResource("SpriteFrames_icrqq")
 frame = 1
 
 [node name="AudioTrigger" parent="." instance=ExtResource("18_bqhyq")]
-position = Vector2(788, -288)
+position = Vector2(781, -190)
 dialogueToPlay = ExtResource("19_lk2kf")
 
 [node name="MainMenu" parent="." instance=ExtResource("20_uqt0d")]
