@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://384jeunaih8y"]
+[gd_scene load_steps=5 format=3 uid="uid://384jeunaih8y"]
 
 [ext_resource type="Script" path="res://Scripts/ribbon_cable_scene_script.gd" id="1_s37l5"]
-[ext_resource type="Texture2D" uid="uid://cjoo07v1hvdp" path="res://Art/Placeholder/InteractionSceneArt/RibbonCableInteraction/RibbonCableBG.png" id="1_txfhp"]
-[ext_resource type="Texture2D" uid="uid://bwi4wkpip1f82" path="res://Art/Placeholder/InteractionSceneArt/RibbonCableInteraction/RibbonCableConnector.png" id="2_nkcln"]
+[ext_resource type="Texture2D" uid="uid://yfqshhwanhvf" path="res://Art/FinalArt/InteractionScenes/RibbonCable/IWTL interactive cable background.png" id="2_4s7ha"]
 [ext_resource type="PackedScene" uid="uid://b0g3lgfhikd3c" path="res://Prefabs/InteractionMechanic/DraggableObject.tscn" id="3_qyaok"]
 [ext_resource type="AudioStream" uid="uid://dc5o4ik742lo7" path="res://Audio/ChargeUp.mp3" id="5_pqbjk"]
 
@@ -11,16 +10,16 @@ process_mode = 3
 script = ExtResource("1_s37l5")
 
 [node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("1_txfhp")
+position = Vector2(117.12, 0)
+scale = Vector2(13.17, 13.17)
+texture = ExtResource("2_4s7ha")
 centered = false
 
-[node name="Connector" type="Sprite2D" parent="."]
-position = Vector2(1044, 451)
-texture = ExtResource("2_nkcln")
-offset = Vector2(-84.565, 89.005)
-
 [node name="RibbonCable" parent="." instance=ExtResource("3_qyaok")]
-position = Vector2(117, 539)
+position = Vector2(318, 539)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_pqbjk")
+
+[node name="TargetConnectionPoint" type="Node2D" parent="."]
+position = Vector2(1068, 506)

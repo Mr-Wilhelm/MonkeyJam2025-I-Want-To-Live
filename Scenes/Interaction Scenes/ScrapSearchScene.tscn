@@ -81,7 +81,7 @@ texture = ExtResource("3_sk7j4")
 region_enabled = true
 region_rect = Rect2(1398, -3, 527, 465)
 
-[node name="Area2D" parent="Scrap2" index="0"]
+[node name="Area2D" parent="Scrap2" index="1"]
 z_index = 1
 
 [node name="CollisionPolygon2D" parent="Scrap2/Area2D" index="0"]
@@ -93,7 +93,7 @@ texture = ExtResource("5_qqk0s")
 region_enabled = true
 region_rect = Rect2(801, -3, 557, 704)
 
-[node name="Area2D" parent="Scrap3" index="0"]
+[node name="Area2D" parent="Scrap3" index="1"]
 z_index = 2
 
 [node name="CollisionPolygon2D" parent="Scrap3/Area2D" index="0"]
@@ -105,7 +105,7 @@ texture = ExtResource("6_lo2dt")
 region_enabled = true
 region_rect = Rect2(80, 425, 569, 480)
 
-[node name="Area2D" parent="Scrap4" index="0"]
+[node name="Area2D" parent="Scrap4" index="1"]
 z_index = 3
 
 [node name="CollisionPolygon2D" parent="Scrap4/Area2D" index="0"]
@@ -117,7 +117,7 @@ texture = ExtResource("7_5smfj")
 region_enabled = true
 region_rect = Rect2(297, -13, 574, 379)
 
-[node name="Area2D" parent="Scrap5" index="0"]
+[node name="Area2D" parent="Scrap5" index="1"]
 z_index = 4
 
 [node name="CollisionPolygon2D" parent="Scrap5/Area2D" index="0"]

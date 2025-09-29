@@ -13,7 +13,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control:scale")
+tracks/0/path = NodePath("Control2/Control:scale")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -29,7 +29,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control:scale")
+tracks/0/path = NodePath("Control2/Control:scale")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -44,7 +44,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control:scale")
+tracks/0/path = NodePath("Control2/Control:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -72,12 +72,26 @@ libraries = {
 "": SubResource("AnimationLibrary_l73nb")
 }
 
-[node name="Control" type="Control" parent="InteractionScene"]
+[node name="Control2" type="Control" parent="InteractionScene"]
 clip_contents = true
 layout_mode = 3
+anchors_preset = 0
+offset_left = 403.699
+offset_top = 183.6
+offset_right = 1516.3
+offset_bottom = 896.4
+mouse_filter = 1
+
+[node name="Control" type="Control" parent="InteractionScene/Control2"]
+clip_contents = true
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -403.78
+offset_top = -184.06
+offset_right = 403.618
+offset_bottom = 183.14
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.66, 0.66)

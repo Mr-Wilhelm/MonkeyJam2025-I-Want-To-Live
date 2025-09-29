@@ -1,6 +1,6 @@
 extends Node2D
 
-var offset : Vector2 = Vector2(0, 75)
+var offset : Vector2 = Vector2(1060, 500)
 var range = 50
 var complete: bool = false
 
@@ -21,10 +21,10 @@ func _physics_process(delta: float) -> void:
 	input_flags = []
 	
 	if !complete:
-		if $Connector.global_position.distance_to($RibbonCable.global_position - (offset * get_parent().scale.x)) < (range * get_parent().scale.x):
+		if $TargetConnectionPoint.global_position.distance_to(($RibbonCable.global_position)) < (range * get_parent().scale.x):
 			$AudioStreamPlayer2D.play()
 			complete = true
 
 	else:
-		$RibbonCable.global_position = $Connector.global_position + (offset * get_parent().scale.x)
-		get_parent().get_parent().unload_scene()
+		$RibbonCable.global_position = $TargetConnectionPoint.global_position 
+		get_parent().get_parent().get_parent().unload_scene()

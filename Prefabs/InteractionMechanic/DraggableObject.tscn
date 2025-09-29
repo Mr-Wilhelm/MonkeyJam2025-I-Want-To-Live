@@ -1,15 +1,21 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0g3lgfhikd3c"]
 
-[ext_resource type="Texture2D" uid="uid://cy3amfgn8euop" path="res://Art/Placeholder/InteractionSceneArt/RibbonCableInteraction/RibbonCable.png" id="1_chxoe"]
+[ext_resource type="Texture2D" uid="uid://yx8tukhfynq3" path="res://Art/FinalArt/InteractionScenes/RibbonCable/IWTL interactive cable.png" id="1_6y3m7"]
 [ext_resource type="Script" path="res://Scripts/DraggableArea.gd" id="2_5uvs3"]
 [ext_resource type="AudioStream" uid="uid://bvhlnfc0bn387" path="res://Audio/nondescriptPickup.mp3" id="3_yuutr"]
 [ext_resource type="AudioStream" uid="uid://dg6f0y3xhk8lm" path="res://Audio/ScrapDrop.mp3" id="4_u4nuy"]
 
 [node name="ObjectSprite" type="Sprite2D"]
 position = Vector2(-610, 0)
-texture = ExtResource("1_chxoe")
+scale = Vector2(13.17, 13.17)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-57.7919, 4.1306)
+scale = Vector2(1, 1)
+texture = ExtResource("1_6y3m7")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-57.7919, 4.1306)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_5uvs3")
@@ -17,6 +23,6 @@ soundEffects = Array[AudioStream]([ExtResource("3_yuutr"), ExtResource("4_u4nuy"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(-960, -540)
-polygon = PackedVector2Array(979, 362, 984, 374, 974, 554, 915, 564, 911, 551, 914, 538, 897, 541, 866, 546, 832, 545, 759, 546, 687, 536, 594, 524, 494, 511, 425, 511, 340, 528, 283, 547, 192, 591, 100, 616, 24, 627, -2, 624, -2, 450, 21, 450, 83, 443, 141, 426, 194, 397, 288, 344, 365, 322, 463, 325, 555, 345, 634, 369, 727, 392, 851, 391, 887, 390, 930, 378, 930, 365)
+polygon = PackedVector2Array(895.991, 534.989, 965.999, 534.989, 965.999, 534.002, 969.036, 534.002, 969.036, 533.014, 971.01, 533.014, 971.01, 531.04, 971.997, 531.04, 971.997, 528.99, 972.984, 528.99, 972.984, 528.003, 973.971, 528.003, 973.971, 527.016, 974.958, 527.016, 974.958, 526.029, 977.008, 526.029, 977.008, 524.966, 979.97, 524.966, 979.97, 523.979, 1011.03, 523.979, 1011.03, 522.992, 1012.01, 522.992, 1012.01, 522.005, 1013, 522.005, 1013, 521.017, 1022.03, 521.017, 1022.03, 522.081, 1023.02, 522.005, 1023.02, 522.992, 1024.01, 522.992, 1024.01, 548.049, 1023.02, 548.049, 1023.02, 549.036, 1022.03, 549.036, 1022.03, 550.023, 1021.05, 550.023, 1021.05, 551.01, 1013.99, 551.01, 1013.99, 550.023, 1013, 550.023, 1013, 549.036, 1011.94, 549.036, 1012.01, 547.973, 1010.95, 547.973, 1010.95, 546.986, 998.041, 546.986, 998.041, 548.049, 995.004, 548.049, 995.004, 549.036, 993.03, 549.036, 993.03, 550.023, 992.043, 550.023, 992.043, 551.997, 991.055, 551.997, 991.055, 554.047, 989.992, 554.047, 989.992, 555.034, 989.005, 555.034, 989.005, 556.021, 988.018, 556.021, 988.018, 557.008, 985.968, 557.008, 985.968, 557.995, 983.007, 557.995, 983.007, 558.983, 895.991, 558.983)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D"]
