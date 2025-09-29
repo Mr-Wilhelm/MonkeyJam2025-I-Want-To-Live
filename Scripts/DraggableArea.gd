@@ -27,7 +27,9 @@ func input_handled():
 		#var scaled_viewport_size = get_viewport_rect().size
 		var lower_bounds = get_viewport_rect().get_center() - scaled_viewport_size/2
 		var upper_bounds = get_viewport_rect().get_center() +scaled_viewport_size/2
-		var deadzone_offset = 50 * get_parent().get_parent().get_parent().scale.x
+		#var deadzone_offset = 50 * get_parent().get_parent().get_parent().scale.x
+		var deadzone_offset = 130
+		
 		
 		get_parent().global_position = get_global_mouse_position() + drag_offset
 		if (get_parent().global_position.x) < lower_bounds.x + deadzone_offset:

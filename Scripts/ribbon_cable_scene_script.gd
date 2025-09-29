@@ -27,4 +27,4 @@ func _physics_process(delta: float) -> void:
 
 	else:
 		$RibbonCable.global_position = $TargetConnectionPoint.global_position 
-		get_parent().get_parent().get_parent().unload_scene()
+		get_parent().get_parent().unload_scene()
