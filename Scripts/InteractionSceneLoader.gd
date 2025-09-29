@@ -20,7 +20,7 @@ func load_scene(chosen_interaction : interaction):
 		interaction.VendingShake:
 			pass
 		interaction.LegTwist:
-			pass
+			get_node("Control").add_child(load("res://Scenes/Interaction Scenes/AttachLegScene.tscn").instantiate())
 	
 	$AnimationPlayer.play("FadeIn")
 

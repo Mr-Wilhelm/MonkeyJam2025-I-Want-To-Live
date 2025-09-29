@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://be6bqdsquyn2n"]
+
+[ext_resource type="Script" path="res://Scenes/Interaction Scenes/attach_leg_scene.gd" id="1_inn0i"]
+[ext_resource type="Texture2D" uid="uid://cc85jsbermpdo" path="res://Art/FinalArt/InteractionScenes/ScrapSearch/IWTL interactive background.png" id="2_45wne"]
+[ext_resource type="Texture2D" uid="uid://berjp7lytw7e7" path="res://Art/FinalArt/InteractionScenes/LegAttach/IWTL interactive k8 torso.png" id="3_35t6o"]
+[ext_resource type="AudioStream" uid="uid://dc5o4ik742lo7" path="res://Audio/ChargeUp.mp3" id="3_i5ccc"]
+[ext_resource type="Texture2D" uid="uid://cgmwvfofwtowq" path="res://Art/FinalArt/InteractionScenes/LegAttach/IWTL interactive k8 leg.png" id="4_s3v2b"]
+[ext_resource type="PackedScene" uid="uid://b0g3lgfhikd3c" path="res://Prefabs/InteractionMechanic/DraggableObject.tscn" id="4_wcmkt"]
+
+[node name="AttachLegScene" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_inn0i")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(13.17, 13.17)
+texture = ExtResource("2_45wne")
+centered = false
+
+[node name="Leg" parent="." instance=ExtResource("4_wcmkt")]
+position = Vector2(1080, 820)
+
+[node name="Sprite2D" parent="Leg" index="0"]
+position = Vector2(0.185261, 9.06493)
+texture = ExtResource("4_s3v2b")
+
+[node name="Area2D" parent="Leg" index="1"]
+position = Vector2(0.185268, 9.06493)
+deadzone_offset = 200
+
+[node name="CollisionPolygon2D" parent="Leg/Area2D" index="0"]
+polygon = PackedVector2Array(947.97, 500.639, 971.66, 500.715, 983.201, 508.232, 988.82, 517.116, 991.098, 525.316, 991.402, 534.656, 987.453, 539.971, 980.316, 543.539, 982.746, 545.21, 982.898, 554.777, 973.179, 560.548, 973.179, 568.445, 970.977, 580.669, 948.653, 580.669, 945.92, 560.548, 944.857, 558.877, 940.756, 558.346, 937.188, 554.246, 936.656, 546.273, 939.238, 544.223, 934.15, 541.641, 928.987, 534.883, 928.835, 522.583, 934.302, 511.497, 939.617, 504.815)
+
+[node name="Foreground" type="Sprite2D" parent="."]
+position = Vector2(56.25, 0)
+scale = Vector2(13.17, 13.17)
+texture = ExtResource("3_35t6o")
+centered = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_i5ccc")
+
+[node name="TargetConnectionPoint" type="Node2D" parent="."]
+position = Vector2(1274, 451)
+
+[editable path="Leg"]

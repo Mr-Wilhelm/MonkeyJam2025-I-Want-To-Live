@@ -116,6 +116,10 @@ scene_to_load = 3
 position = Vector2(1090, 5)
 scene_to_load = 2
 
+[node name="InteractPrompt-LegAttach" parent="." instance=ExtResource("4_u25v3")]
+position = Vector2(727, 5)
+scene_to_load = 6
+
 [node name="Environ-Gate" type="Sprite2D" parent="."]
 position = Vector2(984, 1072)
 
