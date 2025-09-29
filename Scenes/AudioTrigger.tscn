@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://euolmm4su44r"]
+
+[ext_resource type="Script" path="res://Scenes/DialoguePlayer.gd" id="1_gnmka"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mekai"]
+
+[node name="AudioTrigger" type="Node2D"]
+script = ExtResource("1_gnmka")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(28.36, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_mekai")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
