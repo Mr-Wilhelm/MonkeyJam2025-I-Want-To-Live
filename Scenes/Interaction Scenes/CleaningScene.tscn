@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbork6k2f0kxi"]
+[gd_scene load_steps=7 format=3 uid="uid://cbork6k2f0kxi"]
 
 [ext_resource type="Script" path="res://Scripts/DirtCleaningScript.gd" id="1_mftfo"]
-[ext_resource type="Texture2D" uid="uid://dmnhduv7v3mqm" path="res://Art/Placeholder/InteractionSceneArt/ScrapSearchInteraction/ScrapSearchBG.png" id="2_ktgtr"]
-[ext_resource type="Texture2D" uid="uid://cego7vhynmun7" path="res://Art/Placeholder/icon.svg" id="3_4ltjq"]
+[ext_resource type="Texture2D" uid="uid://cc85jsbermpdo" path="res://Art/FinalArt/InteractionScenes/ScrapSearch/IWTL interactive background.png" id="2_f8x5y"]
+[ext_resource type="Texture2D" uid="uid://b3mekl858mebq" path="res://Art/FinalArt/InteractionScenes/DirtClean/IWTL interaction K8 replacement gear.png" id="3_cd2rd"]
 [ext_resource type="Script" path="res://Scripts/DirtSpotScript.gd" id="4_ijo2w"]
+[ext_resource type="Texture2D" uid="uid://b28msc362vsvo" path="res://Art/FinalArt/InteractionScenes/DirtClean/IWTL interactive dirt clumps.png" id="5_8qrq8"]
 [ext_resource type="AudioStream" uid="uid://bi5bhl8biduea" path="res://Audio/Scrubbing.mp3" id="5_xyesx"]
 
 [node name="DirtCleaningScene" type="Node2D"]
@@ -11,83 +12,91 @@ process_mode = 3
 script = ExtResource("1_mftfo")
 
 [node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("2_ktgtr")
+scale = Vector2(13.17, 13.17)
+texture = ExtResource("2_f8x5y")
 centered = false
 
 [node name="Gear" type="Sprite2D" parent="."]
-modulate = Color(0, 0.906472, 0.917673, 1)
-position = Vector2(963, 550)
-scale = Vector2(6.16, 6.16)
-texture = ExtResource("3_4ltjq")
+position = Vector2(864, 528)
+scale = Vector2(16, 16)
+texture = ExtResource("3_cd2rd")
+region_enabled = true
+region_rect = Rect2(55, 1, 51, 51)
 
 [node name="DirtObject" type="Node2D" parent="."]
-position = Vector2(758, 309)
+position = Vector2(722, 267)
+scale = Vector2(15, 15)
 script = ExtResource("4_ijo2w")
 
 [node name="DirtSprite" type="Sprite2D" parent="DirtObject"]
-modulate = Color(0.388235, 0.305882, 0.14902, 1)
-scale = Vector2(1.56, 1.56)
-texture = ExtResource("3_4ltjq")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DirtObject"]
-stream = ExtResource("5_xyesx")
+texture = ExtResource("5_8qrq8")
+region_enabled = true
+region_rect = Rect2(11, 1, 25, 15)
 
 [node name="DirtObject2" type="Node2D" parent="."]
-position = Vector2(1128, 309)
+position = Vector2(1014, 772)
+scale = Vector2(15, 15)
 script = ExtResource("4_ijo2w")
 
 [node name="DirtSprite" type="Sprite2D" parent="DirtObject2"]
-modulate = Color(0.388235, 0.305882, 0.14902, 1)
-scale = Vector2(1.56, 1.56)
-texture = ExtResource("3_4ltjq")
+texture = ExtResource("5_8qrq8")
+region_enabled = true
+region_rect = Rect2(41, 1, 26, 19)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DirtObject2"]
 stream = ExtResource("5_xyesx")
 
 [node name="DirtObject3" type="Node2D" parent="."]
-position = Vector2(1051, 580)
+position = Vector2(1096, 306)
+scale = Vector2(15, 15)
 script = ExtResource("4_ijo2w")
 
 [node name="DirtSprite" type="Sprite2D" parent="DirtObject3"]
-modulate = Color(0.388235, 0.305882, 0.14902, 1)
-scale = Vector2(1.56, 1.56)
-texture = ExtResource("3_4ltjq")
+texture = ExtResource("5_8qrq8")
+region_enabled = true
+region_rect = Rect2(1, 19, 28, 22)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DirtObject3"]
 stream = ExtResource("5_xyesx")
 
 [node name="DirtObject4" type="Node2D" parent="."]
-position = Vector2(779, 708)
+position = Vector2(582, 713)
+scale = Vector2(15, 15)
 script = ExtResource("4_ijo2w")
 
 [node name="DirtSprite" type="Sprite2D" parent="DirtObject4"]
-modulate = Color(0.388235, 0.305882, 0.14902, 1)
-scale = Vector2(1.56, 1.56)
-texture = ExtResource("3_4ltjq")
+texture = ExtResource("5_8qrq8")
+region_enabled = true
+region_rect = Rect2(34, 24, 28, 20)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DirtObject4"]
 stream = ExtResource("5_xyesx")
 
 [node name="DirtObject5" type="Node2D" parent="."]
-position = Vector2(886, 532)
+position = Vector2(788, 525)
+scale = Vector2(15, 15)
 script = ExtResource("4_ijo2w")
 
 [node name="DirtSprite" type="Sprite2D" parent="DirtObject5"]
-modulate = Color(0.388235, 0.305882, 0.14902, 1)
-scale = Vector2(1.56, 1.56)
-texture = ExtResource("3_4ltjq")
+texture = ExtResource("5_8qrq8")
+region_enabled = true
+region_rect = Rect2(41, 1, 26, 19)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DirtObject5"]
 stream = ExtResource("5_xyesx")
 
 [node name="DirtObject6" type="Node2D" parent="."]
-position = Vector2(1184, 805)
+position = Vector2(1157, 570)
+scale = Vector2(15, 15)
 script = ExtResource("4_ijo2w")
 
 [node name="DirtSprite" type="Sprite2D" parent="DirtObject6"]
-modulate = Color(0.388235, 0.305882, 0.14902, 1)
-scale = Vector2(1.56, 1.56)
-texture = ExtResource("3_4ltjq")
+texture = ExtResource("5_8qrq8")
+region_enabled = true
+region_rect = Rect2(34, 24, 28, 20)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DirtObject6"]
+stream = ExtResource("5_xyesx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_xyesx")

@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://fh67pkiqemlh"]
+
+[ext_resource type="Script" path="res://Scenes/Interaction Scenes/insert_gear_scene.gd" id="1_byeet"]
+[ext_resource type="Texture2D" uid="uid://ic0e1vc6muxa" path="res://Art/FinalArt/InteractionScenes/GearInsert/IWTL interaction K8 torso background.png" id="2_huib2"]
+[ext_resource type="PackedScene" uid="uid://b0g3lgfhikd3c" path="res://Prefabs/InteractionMechanic/DraggableObject.tscn" id="3_fb8we"]
+[ext_resource type="Texture2D" uid="uid://csg7xhhs5b2al" path="res://Art/FinalArt/InteractionScenes/GearInsert/GearMiddle.png" id="3_vcnom"]
+[ext_resource type="Texture2D" uid="uid://b3mekl858mebq" path="res://Art/FinalArt/InteractionScenes/DirtClean/IWTL interaction K8 replacement gear.png" id="4_uhwd4"]
+[ext_resource type="Texture2D" uid="uid://dgan3wdpyrw5s" path="res://Art/FinalArt/InteractionScenes/GearInsert/IWTL interaction K8 torso overlay.png" id="5_1fciv"]
+[ext_resource type="Texture2D" uid="uid://w7foxgcy4vdb" path="res://Art/FinalArt/InteractionScenes/GearInsert/EDWARD_CUT_IWTL interaction K8 gears and connector.png" id="6_3xf4j"]
+[ext_resource type="AudioStream" uid="uid://dc5o4ik742lo7" path="res://Audio/ChargeUp.mp3" id="6_n1qd0"]
+
+[node name="GearInsertScene" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_byeet")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(13.17, 13.17)
+texture = ExtResource("2_huib2")
+centered = false
+
+[node name="UpperGearBearing" type="Sprite2D" parent="."]
+position = Vector2(780, 228)
+scale = Vector2(13.17, 13.17)
+texture = ExtResource("3_vcnom")
+centered = false
+region_rect = Rect2(0, 0, 51, 51)
+
+[node name="MiddleGearBearing" type="Sprite2D" parent="."]
+position = Vector2(1205, 632)
+scale = Vector2(13.17, 13.17)
+texture = ExtResource("3_vcnom")
+centered = false
+region_rect = Rect2(0, 0, 51, 51)
+
+[node name="LowerGearBearing" type="Sprite2D" parent="."]
+position = Vector2(767, 1050)
+scale = Vector2(13.17, 13.17)
+texture = ExtResource("3_vcnom")
+centered = false
+region_rect = Rect2(0, 0, 51, 51)
+
+[node name="LowerGear" type="Sprite2D" parent="."]
+position = Vector2(489, 786)
+scale = Vector2(13.17, 13.17)
+texture = ExtResource("6_3xf4j")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 51, 51)
+
+[node name="UpperGear" type="Sprite2D" parent="."]
+position = Vector2(493, -73)
+scale = Vector2(13.17, 13.17)
+texture = ExtResource("6_3xf4j")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 51, 51)
+
+[node name="Foreground" type="Sprite2D" parent="."]
+scale = Vector2(13.17, 13.17)
+texture = ExtResource("5_1fciv")
+centered = false
+
+[node name="Gear" parent="." instance=ExtResource("3_fb8we")]
+position = Vector2(341, 315)
+
+[node name="Sprite2D" parent="Gear" index="0"]
+position = Vector2(0, 0)
+texture = ExtResource("4_uhwd4")
+region_enabled = true
+region_rect = Rect2(55, 1, 51, 51)
+
+[node name="Area2D" parent="Gear" index="1"]
+position = Vector2(0, 0)
+deadzone_offset = 50
+
+[node name="CollisionPolygon2D" parent="Gear/Area2D" index="0"]
+polygon = PackedVector2Array(936.276, 527.594, 947.97, 516.432, 953.968, 522.279, 956.55, 520.381, 963.459, 520.381, 965.889, 522.355, 972.115, 516.432, 983.505, 527.974, 977.582, 534.048, 979.633, 536.934, 979.329, 543.388, 977.734, 545.817, 983.733, 551.892, 972.267, 563.813, 966.041, 557.435, 963.535, 559.409, 956.474, 559.561, 954.12, 557.738, 948.197, 563.813, 936.352, 552.271, 942.351, 546.045, 940.604, 543.388, 940.604, 536.63, 942.427, 534.2)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_n1qd0")
+
+[node name="TargetConnectionPoint" type="Node2D" parent="."]
+position = Vector2(1263, 693)
+
+[editable path="Gear"]

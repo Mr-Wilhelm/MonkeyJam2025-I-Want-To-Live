@@ -16,9 +16,9 @@ func load_scene(chosen_interaction : interaction):
 		interaction.DirtCleaning:
 			get_node("Control").add_child(load("res://Scenes/Interaction Scenes/CleaningScene.tscn").instantiate())
 		interaction.GearInsert:
-			pass
+			get_node("Control").add_child(load("res://Scenes/Interaction Scenes/InsertGearScene.tscn").instantiate())
 		interaction.VendingShake:
-			pass
+			get_node("Control").add_child(load("res://Scenes/Interaction Scenes/LegScrapSearchScene.tscn").instantiate())
 		interaction.LegTwist:
 			get_node("Control").add_child(load("res://Scenes/Interaction Scenes/AttachLegScene.tscn").instantiate())
 	

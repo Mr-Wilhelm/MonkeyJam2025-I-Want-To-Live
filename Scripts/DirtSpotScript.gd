@@ -3,7 +3,7 @@ extends Node2D
 @onready var dirtSprite: Sprite2D = $DirtSprite
 
 var isCleaning: bool = false
-var cleanRate: float = 0.01 #speed at which cleaning is done
+var cleanRate: float = 1.5 #speed at which cleaning is done
 
 func _ready() -> void:
 	dirtSprite.modulate.a = 1.0
@@ -23,15 +23,16 @@ func _process(delta):
 		var mousePosLocal = to_local(mousePosGlobal)
 		
 		if dirtSprite.get_rect().has_point(mousePosLocal):
-			scrub()
+			scrub(delta)
 			
 		print(get_parent().patchesCleaned)
 
-func scrub():
-	if dirtSprite.modulate.a > 0:
-		dirtSprite.modulate.a = max(0.0, dirtSprite.modulate.a - cleanRate)
-		if !$AudioStreamPlayer2D.playing:
-			$AudioStreamPlayer2D.play()
+func scrub(delta: float):
+	if dirtSprite.modulate.a > 0.2:
+		dirtSprite.modulate.a = max(0.0, dirtSprite.modulate.a - cleanRate * delta)
+		if !get_parent().get_node("AudioStreamPlayer2D").playing:
+			get_parent().get_node("AudioStreamPlayer2D").pitch_scale = randf_range(0.9, 1.05)
+			get_parent().get_node("AudioStreamPlayer2D").play()
 	else:
 		objectClean()
 		queue_free()
