@@ -69,7 +69,7 @@ libraries = {
 
 [node name="Sprite2D" type="Sprite2D" parent="ReplacementArm"]
 position = Vector2(914, 540)
-scale = Vector2(6, 6)
+scale = Vector2(9, 9)
 texture = ExtResource("3_6j1o5")
 
 [node name="Area2D" type="Area2D" parent="ReplacementArm"]
@@ -80,7 +80,7 @@ collision_mask = 2
 script = ExtResource("4_3jngq")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ReplacementArm/Area2D"]
-polygon = PackedVector2Array(540, 674, 1077, 330, 1104, 343, 1152, 317, 1203, 317, 1251, 341, 1280, 385, 1284, 432, 1276, 468, 1255, 504, 1208, 528, 1163, 533, 1149, 557, 600, 764, 572, 766, 538, 715)
+polygon = PackedVector2Array(355, 740, 1148, 229, 1178, 229, 1194, 245, 1280, 205, 1348, 205, 1394, 221, 1442, 268, 1471, 329, 1475, 400, 1434, 484, 1353, 531, 1289, 528, 1272, 562, 449, 878, 406, 879, 353, 804)
 
 [node name="Scrap2" parent="." instance=ExtResource("2_a2e7t")]
 position = Vector2(857, 430)
