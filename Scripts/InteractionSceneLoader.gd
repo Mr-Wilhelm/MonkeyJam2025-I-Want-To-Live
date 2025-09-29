@@ -27,6 +27,7 @@ func load_scene(chosen_interaction : interaction):
 
 
 func unload_scene():
+	await get_tree().create_timer(1, PROCESS_MODE_ALWAYS).timeout
 	$AnimationPlayer.play("FadeOut")
 	get_tree().paused = false
 		
@@ -36,4 +37,5 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "FadeIn":
 		get_tree().paused = true
 	elif anim_name == "FadeOut":
-		get_node("Control").get_child(0).queue_free()
+		if get_node("Control").get_child_count() > 0:
+			get_node("Control").get_child(0).queue_free()

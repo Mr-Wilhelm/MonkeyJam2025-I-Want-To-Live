@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var interactLable: Label = $Label
+@onready var interactLable: TextureRect = $Label
 var currentInteractions := []	#list of interactable objects
 var canInteract := true
 
