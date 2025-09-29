@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dabdfpn7u2vxp"]
+
+[ext_resource type="Script" path="res://Scenes/Interaction Scenes/attach_arm_scene.gd" id="1_dm6p4"]
+[ext_resource type="Texture2D" uid="uid://btu81ojpsfyn5" path="res://Art/FinalArt/InteractionScenes/ArmAttach/IWTL interactive arm background.png" id="2_wb7nn"]
+[ext_resource type="PackedScene" uid="uid://b0g3lgfhikd3c" path="res://Prefabs/InteractionMechanic/DraggableObject.tscn" id="3_om1oa"]
+[ext_resource type="AudioStream" uid="uid://dc5o4ik742lo7" path="res://Audio/ChargeUp.mp3" id="4_swrt8"]
+[ext_resource type="Texture2D" uid="uid://kxiir36sx61o" path="res://Art/FinalArt/InteractionScenes/ScrapSearch/IWTL k8 arm.png" id="5_pf55f"]
+
+[node name="AttachArmScene" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_dm6p4")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(13.17, 13.17)
+texture = ExtResource("2_wb7nn")
+centered = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_swrt8")
+
+[node name="TargetConnectionPoint" type="Node2D" parent="."]
+position = Vector2(820, 524)
+
+[node name="Arm" parent="." instance=ExtResource("3_om1oa")]
+position = Vector2(216, 660)
+
+[node name="Sprite2D" parent="Arm" index="0"]
+position = Vector2(-44.2449, 19.5934)
+texture = ExtResource("5_pf55f")
+
+[node name="Area2D" parent="Arm" index="1"]
+position = Vector2(-44.2449, 19.5934)
+
+[node name="CollisionPolygon2D" parent="Arm/Area2D" index="0"]
+polygon = PackedVector2Array(897.443, 562.749, 985.825, 505.725, 989.47, 505.725, 990.989, 507.472, 997.443, 504.055, 1002.07, 502.916, 1008.76, 503.295, 1014.3, 505.573, 1019.31, 511.496, 1021.82, 518.937, 1020.6, 526.378, 1016.58, 532.529, 1011.64, 536.401, 1006.1, 537.312, 1000.94, 538.299, 998.43, 543.462, 908.149, 577.707, 903.517, 577.707, 897.063, 568.519)
+
+[editable path="Arm"]

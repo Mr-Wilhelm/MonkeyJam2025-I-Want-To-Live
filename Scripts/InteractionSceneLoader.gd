@@ -12,7 +12,7 @@ func load_scene(chosen_interaction : interaction):
 		interaction.ScrapSearch:
 			get_node("Control").add_child(load("res://Scenes/Interaction Scenes/ScrapSearchScene.tscn").instantiate())
 		interaction.Welding:
-			pass
+			get_node("Control").add_child(load("res://Scenes/Interaction Scenes/AttachArmScene.tscn").instantiate())
 		interaction.DirtCleaning:
 			get_node("Control").add_child(load("res://Scenes/Interaction Scenes/CleaningScene.tscn").instantiate())
 		interaction.GearInsert:
